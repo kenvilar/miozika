@@ -1,46 +1,7 @@
 <?php
 
-function sanitizeFormUsername($inputText) {
-    $inputText = strip_tags($inputText);
-    $inputText = str_replace(" ", "", $inputText);
-    return $inputText;
-}
-
-function sanitizeFormPassword($inputText) {
-    $inputText = strip_tags($inputText);
-    return $inputText;
-}
-
-function sanitizeFormString($inputText) {
-    $inputText = strip_tags($inputText);
-    $inputText = str_replace(" ", "", $inputText);
-    $inputText = ucfirst(strtolower($inputText));
-    return $inputText;
-}
-
-if (isset($_POST['loginButton'])) {
-    $username = $_POST['loginUsername'];
-    $username = strip_tags($username);
-    $username = ucfirst(strtolower($username));
-    echo $username;
-}
-
-if (isset($_POST['registerButton'])) {
-    $userName = sanitizeFormUsername($_POST['userName']);
-    $firstName = sanitizeFormString($_POST['firstName']);
-    $lastName = sanitizeFormString($_POST['lastName']);
-    $email = sanitizeFormString($_POST['email']);
-    $confirmEmail = sanitizeFormString($_POST['confirmEmail']);
-    $password = sanitizeFormPassword($_POST['password']);
-    $confirmPassword = sanitizeFormPassword($_POST['confirmPassword']);
-    echo 'Username: ' . $userName . "<br>";
-    echo 'First Name: ' . $firstName . "<br>";
-    echo 'Last Name: ' . $lastName . "<br>";
-    echo 'Email: ' . $email . "<br>";
-    echo 'Confirm Email: ' . $confirmEmail . "<br>";
-    echo 'Password: '. $password . "<br>";
-    echo 'Confirm Password: ' . $confirmPassword . "<br>";
-}
+include 'includes/handlers/login-handler.php';
+include 'includes/handlers/register-handler.php';
 
 ?>
 <!doctype html>
@@ -59,11 +20,13 @@ if (isset($_POST['registerButton'])) {
         <h2>Login To Your Account</h2>
         <p>
             <label for="loginUsername">Username</label>
-            <input type="text" id="loginUsername" name="loginUsername" placeholder="Please input your username here..." required>
+            <input type="text" id="loginUsername" name="loginUsername" placeholder="Please input your username here..."
+                   required>
         </p>
         <p>
             <label for="loginPassword">Password</label>
-            <input type="password" id="loginPassword" name="loginPassword" placeholder="Please input your password here..." required>
+            <input type="password" id="loginPassword" name="loginPassword"
+                   placeholder="Please input your password here..." required>
         </p>
         <p>
             <button type="submit" name="loginButton">Login</button>
@@ -97,7 +60,8 @@ if (isset($_POST['registerButton'])) {
         </p>
         <p>
             <label for="confirmPassword">Confirm Password</label>
-            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password..." required>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password..."
+                   required>
         </p>
         <p>
             <button type="submit" name="registerButton">Sign Up</button>
