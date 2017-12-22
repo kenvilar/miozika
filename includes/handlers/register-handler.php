@@ -18,6 +18,26 @@ function sanitizeFormString($inputText) {
     return $inputText;
 }
 
+function validateUsername($un) {
+    //
+}
+
+function validateFirstName($fn) {
+    //
+}
+
+function validateLastName($ln) {
+    //
+}
+
+function validateEmails($email, $confirmEmail) {
+    //
+}
+
+function validatePasswords($password, $confirmPassword) {
+    //
+}
+
 if (isset($_POST['registerButton'])) {
     $userName = sanitizeFormUsername($_POST['userName']);
     $firstName = sanitizeFormString($_POST['firstName']);
@@ -26,6 +46,13 @@ if (isset($_POST['registerButton'])) {
     $confirmEmail = sanitizeFormString($_POST['confirmEmail']);
     $password = sanitizeFormPassword($_POST['password']);
     $confirmPassword = sanitizeFormPassword($_POST['confirmPassword']);
+
+    validateUsername($userName);
+    validateFirstName($firstName);
+    validateLastName($lastName);
+    validateEmails($lastName, $confirmEmail);
+    validatePasswords($lastName, $confirmPassword);
+
     echo 'Username: ' . $userName . "<br>";
     echo 'First Name: ' . $firstName . "<br>";
     echo 'Last Name: ' . $lastName . "<br>";
