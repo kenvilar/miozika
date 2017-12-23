@@ -1,5 +1,7 @@
 <?php
 
+include $_SERVER['DOCUMENT_ROOT'] . '/includes/classes/Account.php';
+
 function sanitizeFormUsername($inputText) {
     $inputText = strip_tags($inputText);
     $inputText = str_replace(" ", "", $inputText);
@@ -18,25 +20,8 @@ function sanitizeFormString($inputText) {
     return $inputText;
 }
 
-function validateUsername($un) {
-    //
-}
-
-function validateFirstName($fn) {
-    //
-}
-
-function validateLastName($ln) {
-    //
-}
-
-function validateEmails($email, $confirmEmail) {
-    //
-}
-
-function validatePasswords($password, $confirmPassword) {
-    //
-}
+$account = new Account();
+$account->register();
 
 if (isset($_POST['registerButton'])) {
     $userName = sanitizeFormUsername($_POST['userName']);
@@ -47,11 +32,11 @@ if (isset($_POST['registerButton'])) {
     $password = sanitizeFormPassword($_POST['password']);
     $confirmPassword = sanitizeFormPassword($_POST['confirmPassword']);
 
-    validateUsername($userName);
+    /*validateUsername($userName);
     validateFirstName($firstName);
     validateLastName($lastName);
     validateEmails($lastName, $confirmEmail);
-    validatePasswords($lastName, $confirmPassword);
+    validatePasswords($lastName, $confirmPassword);*/
 
     echo 'Username: ' . $userName . "<br>";
     echo 'First Name: ' . $firstName . "<br>";
