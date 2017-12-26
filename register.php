@@ -1,7 +1,8 @@
 <?php
 
-include 'includes/handlers/login-handler.php';
+include 'includes/classes/Account.php';
 include 'includes/handlers/register-handler.php';
+include 'includes/handlers/login-handler.php';
 
 ?>
 <!doctype html>
@@ -16,24 +17,7 @@ include 'includes/handlers/register-handler.php';
 <body>
 
 <div id="inputContainer">
-    <form method="POST" action="<?php $_SERVER['PHP_SELF']; ?>" id="loginForm">
-        <h2>Login To Your Account</h2>
-        <p>
-            <label for="loginUsername">Username</label>
-            <input type="text" id="loginUsername" name="loginUsername" placeholder="Please input your username here..."
-                   required>
-        </p>
-        <p>
-            <label for="loginPassword">Password</label>
-            <input type="password" id="loginPassword" name="loginPassword"
-                   placeholder="Please input your password here..." required>
-        </p>
-        <p>
-            <button type="submit" name="loginButton">Login</button>
-        </p>
-    </form>
-
-    <form method="POST" action="<?php $_SERVER['PHP_SELF']; ?>" id="registerForm">
+    <form method="POST" action="register.php" id="registerForm">
         <p>
             <label for="userName">Username</label>
             <input type="text" name="userName" id="userName" placeholder="Please input your username here.." required>

@@ -1,7 +1,5 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'] . '/includes/classes/Account.php';
-
 function sanitizeFormUsername($inputText) {
     $inputText = strip_tags($inputText);
     $inputText = str_replace(" ", "", $inputText);
