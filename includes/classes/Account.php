@@ -24,15 +24,29 @@ class Account {
     }
 
     private function validateFirstName($fn) {
-        echo 'validateFirstName function was called';
+        if (strlen($fn) > 20 || strlen($fn) < 2) {
+            array_push($this->error, 'Your first name must be between 2 and 20 characters!');
+            return;
+        }
     }
 
     private function validateLastName($ln) {
-        echo 'validateLastName function was called';
+        if (strlen($ln) > 20 || strlen($ln) < 2) {
+            array_push($this->error, 'Your last name must be between 2 and 20 characters!');
+            return;
+        }
     }
 
     private function validateEmails($email, $confirmEmail) {
-        echo 'validateEmails function was called';
+        if ($email !== $confirmEmail) {
+            array_push($this->error, 'Your emails don\'t matched.');
+            return;
+        }
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            array_push($this->error, 'Your email is invalid.');
+            return;
+        }
     }
 
     private function validatePasswords($password, $confirmPassword) {
