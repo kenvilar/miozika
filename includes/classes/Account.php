@@ -22,6 +22,13 @@ class Account {
         }
     }
 
+    public function getErrors($error) {
+        if (!in_array($error, $this->error)) {
+            $error = '';
+        }
+        return "<span class='errorMessage'>{$error}</span>";
+    }
+
     private function validateUsername($un) {
         if (strlen($un) > 20 || strlen($un) < 5) {
             array_push($this->error, 'Your username must be between 5 and 20 characters!');
@@ -67,7 +74,7 @@ class Account {
         }
 
         if (preg_match('/[^A-Za-z0-9]/', $password)) {
-            array_push($this->error, 'Your passwords can only container numbers and letter.');
+            array_push($this->error, 'Your passwords can only contain numbers and letter.');
             return;
         }
     }
