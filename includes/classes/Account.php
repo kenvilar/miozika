@@ -14,6 +14,12 @@ class Account {
         $this->validateLastName($lastName);
         $this->validateEmails($email, $confirmEmail);
         $this->validatePasswords($password, $confirmPassword);
+
+        if (empty($this->error)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     private function validateUsername($un) {

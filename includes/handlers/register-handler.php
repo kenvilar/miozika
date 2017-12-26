@@ -30,13 +30,10 @@ if (isset($_POST['registerButton'])) {
     $confirmPassword = sanitizeFormPassword($_POST['confirmPassword']);
 
     $account = new Account();
-    $account->register($userName, $firstName, $lastName, $email, $confirmEmail, $password, $confirmPassword);
-
-    echo 'Username: ' . $userName . "<br>";
-    echo 'First Name: ' . $firstName . "<br>";
-    echo 'Last Name: ' . $lastName . "<br>";
-    echo 'Email: ' . $email . "<br>";
-    echo 'Confirm Email: ' . $confirmEmail . "<br>";
-    echo 'Password: ' . $password . "<br>";
-    echo 'Confirm Password: ' . $confirmPassword . "<br>";
+    $successful = $account->register($userName, $firstName, $lastName, $email, $confirmEmail, $password, $confirmPassword);
+    if ($successful) {
+        header('Location: index.php');
+    } else {
+        echo 'Error!';
+    }
 }
