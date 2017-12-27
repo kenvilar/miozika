@@ -29,6 +29,12 @@ class Account {
         return "<span class='errorMessage'>{$error}</span>";
     }
 
+    public function getInputValue($name) {
+        if (isset($_POST[$name])) {
+            echo $_POST[$name];
+        }
+    }
+
     private function validateUsername($un) {
         if (strlen($un) > 20 || strlen($un) < 5) {
             array_push($this->error, Constants::$userNameLimitChars);
