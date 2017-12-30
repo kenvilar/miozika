@@ -35,7 +35,7 @@ class Account {
         $encryptedPassword = md5($password);
         $date = date('Y-m-d');
         $profPic = 'assets/images/profile-pics/prof-pic.png';
-        $result = mysqli_query($this->con, "INSERT INTO users VALUES ('', '$userName', '$firstName', '$lastName', '$email', '$encryptedPassword', '$date', '$profPic')");
+        $result = mysqli_query($this->con, "INSERT INTO users VALUES (id, '$userName', '$firstName', '$lastName', '$email', '$encryptedPassword', '$date', '$profPic')");
 
         return $result;
     }
