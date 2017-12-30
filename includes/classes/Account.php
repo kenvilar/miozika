@@ -3,8 +3,10 @@
 class Account {
 
     private $error;
+    private $con;
 
-    public function __construct() {
+    public function __construct($con) {
+        $this->con = $con;
         $this->error = array();
     }
 
@@ -16,7 +18,7 @@ class Account {
         $this->validatePasswords($password, $confirmPassword);
 
         if (empty($this->error)) {
-            return true;
+            return $this->insertUserDetails($userName, $firstName, $lastName, $email, $password);
         } else {
             return false;
         }
@@ -27,6 +29,15 @@ class Account {
             $error = '';
         }
         return "<span class='errorMessage'>{$error}</span>";
+    }
+
+    private function insertUserDetails($userName, $firstName, $lastName, $email, $password) {
+        $encryptedPassword = md5($password);
+        $date = date('Y-m-d');
+        $profPic = 'assets/images/profile-pics/prof-pic.png';
+        $result = mysqli_query($this->con, "INSERT INTO users VALUES ('', '$userName', '$firstName', '$lastName', '$email', '$encryptedPassword', '$date', '$profPic')");
+
+        return $result;
     }
 
     public function getInputValue($name) {
