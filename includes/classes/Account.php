@@ -51,6 +51,12 @@ class Account {
             array_push($this->error, Constants::$userNameLimitChars);
             return;
         }
+
+        $userNameExists = mysqli_query($this->con, "SELECT userName FROM users WHERE userName='$un'");
+        if (mysqli_num_rows($userNameExists) !== 0) {
+            array_push($this->error, Constants::$userNameExists);
+            return;
+        }
     }
 
     private function validateFirstName($fn) {
@@ -75,6 +81,12 @@ class Account {
 
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             array_push($this->error, Constants::$emailInvalid);
+            return;
+        }
+
+        $emailExists = mysqli_query($this->con, "SELECT email FROM users WHERE email='$email'");
+        if (mysqli_num_rows($emailExists) !== 0) {
+            array_push($this->error, Constants::$emailExists);
             return;
         }
     }

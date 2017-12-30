@@ -24,6 +24,7 @@ include 'includes/handlers/login-handler.php';
     <form method="POST" action="register.php" id="registerForm">
         <p>
             <?php echo $account->getErrors(Constants::$userNameLimitChars); ?>
+            <?php echo $account->getErrors(Constants::$userNameExists); ?>
             <label for="userName">Username</label>
             <input type="text" name="userName" id="userName" placeholder="Please input your username here.."
                    value="<?php $account->getInputValue('userName'); ?>" required>
@@ -43,6 +44,7 @@ include 'includes/handlers/login-handler.php';
         <p>
             <?php echo $account->getErrors(Constants::$emailDontMatch); ?>
             <?php echo $account->getErrors(Constants::$emailInvalid); ?>
+            <?php echo $account->getErrors(Constants::$emailExists); ?>
             <label for="email">Email</label>
             <input type="email" id="email" name="email" placeholder="Your email here..."
                    value="<?php $account->getInputValue('email'); ?>" required>
