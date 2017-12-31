@@ -37,10 +37,9 @@ class Account {
     }
 
     public function getErrors($error) {
-        if (!in_array($error, $this->error)) {
-            $error = '';
+        if (in_array($error, $this->error)) {
+            return "<span class='alert alert-warning'>{$error}</span>";
         }
-        return "<span class='alert alert-warning'>{$error}</span>";
     }
 
     private function insertUserDetails($userName, $firstName, $lastName, $email, $password) {
