@@ -30,6 +30,7 @@ if (isset($_POST['registerButton'])) {
     $account = new Account($con);
     $successful = $account->register($userName, $firstName, $lastName, $email, $confirmEmail, $password, $confirmPassword);
     if ($successful) {
+        $_SESSION['is_user_logged_in'] = $userName;
         header('Location: index.php');
     }
 }
