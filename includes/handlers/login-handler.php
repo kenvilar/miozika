@@ -2,7 +2,10 @@
 
 if (isset($_POST['loginButton'])) {
     $username = $_POST['loginUsername'];
-    $username = strip_tags($username);
-    $username = ucfirst(strtolower($username));
-    echo $username;
+    $password = $_POST['loginPassword'];
+
+    $result = $account->login($username, $password);
+    if ($result) {
+        header('Location: index.php');
+    }
 }
