@@ -40,7 +40,7 @@ class Account {
         if (!in_array($error, $this->error)) {
             $error = '';
         }
-        return "<span class='errorMessage'>{$error}</span>";
+        return "<span class='alert alert-warning'>{$error}</span>";
     }
 
     private function insertUserDetails($userName, $firstName, $lastName, $email, $password) {

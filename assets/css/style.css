@@ -1,4 +1,13 @@
-.errorMessage {
-	display: block;
-	color: #ff0000;
+.alert {
+	margin-bottom: 24px;
+	border: 1px solid transparent;
+	border-radius: 0;
+	font-size: 12px;
+	padding: 14px 14px 12px;
+	font-weight: 400;
+}
+.alert-warning {
+	background-color: #f59b23;
+	border-color: #f59b23;
+	color: #fff;
 }
