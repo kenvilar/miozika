@@ -56,6 +56,15 @@ if (isset($_SESSION['is_user_logged_in'])) {
                         <img src="assets/images/icons/repeat.png" alt="repeat">
                     </button>
                 </div>
+                <div class="playbackBar">
+                    <span class="progressTime current">0.00</span>
+                    <div class="progressBar">
+                        <div class="progressBarBg">
+                            <div class="progress"></div>
+                        </div>
+                    </div>
+                    <span class="progressTime remaining">0.00</span>
+                </div>
             </div>
         </div>
         <div class="nowPlayingRight"></div>
