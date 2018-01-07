@@ -41,6 +41,8 @@ include 'includes/handlers/login-handler.php';
                         <button class="btn btn-green btn-block" type="submit" name="loginButton">Login</button>
                     </p>
                 </form>
+                <br>
+                <p class="text-white text-center">Don't have an account? <a class="text-green-light" href="/register.php">Sign Up</a></p>
             </div>
         </div>
     </div>

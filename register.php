@@ -76,6 +76,8 @@ include 'includes/handlers/register-handler.php';
                         <button class="btn btn-green btn-block" type="submit" name="registerButton">Sign Up</button>
                     </p>
                 </form>
+                <br>
+                <p class="text-white text-center">Already have an account? <a class="text-green-light" href="/login.php">Log in</a></p>
             </div>
         </div>
     </div>

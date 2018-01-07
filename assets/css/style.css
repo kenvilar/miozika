@@ -3,6 +3,10 @@ html, body {
 	margin: 0;
 	height: 100%;
 }
+a:hover {
+	text-decoration: none;
+	color: inherit;
+}
 #background {
 	background-color: #000;
 	background-image: url('../images/bg.jpg');
@@ -28,6 +32,17 @@ html, body {
 	border-color: #f59b23;
 	color: #fff;
 	display: table;
+}
+/* Typography
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.text-white {
+	color: #fff;
+}
+.text-green {
+	color: #1db954;
+}
+.text-green-light {
+	color: #1ed760;
 }
 /* Buttons
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
