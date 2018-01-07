@@ -1,3 +1,18 @@
+html, body {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+#background {
+	background-color: #000;
+	background-image: url('../images/bg.jpg');
+	background-position: center;
+	-webkit-background-size: cover;
+	background-size: cover;
+	display: table;
+	width: 100%;
+	height: 100%;
+}
 .alert {
 	margin-bottom: 24px;
 	border: 1px solid transparent;
@@ -12,3 +27,77 @@
 	color: #fff;
 	display: table;
 }
+/* Buttons
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.btn {
+	display: inline-block;
+	margin-bottom: 0;
+	font-weight: 700;
+	text-align: center;
+	vertical-align: middle;
+	touch-action: manipulation;
+	cursor: pointer;
+	background-image: none;
+	border: 1px solid transparent;
+	white-space: nowrap;
+	padding: 6px 12px;
+	font-size: 16px;
+	line-height: 1.5;
+	border-radius: 4px;
+	padding: 7px 12px 5px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.btn-green {
+	color: #fff;
+	background-color: #1db954;
+	margin-top: 15px;
+}
+.btn-green:hover {
+	color: #fff;
+	background-color: #1ed760;
+}
+.btn-block {
+	display: block;
+	width: 100%;
+}
+/* Register Page
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.registerLoginContainer {
+	padding: 1.9em;
+}
+.registerLoginContainer .container {
+	margin-left: auto;
+	margin-right: auto;
+}
+.registerLoginContainer .container:before {
+	display: table;
+	content: "";
+}
+.registerLoginContainer #inputContainer {
+	margin: 0 auto;
+	max-width: 26.875em;
+}
+.registerLoginContainer #inputContainer p {
+	margin-bottom: 0;
+}
+.registerLoginContainer #inputContainer input {
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	-webkit-appearance: none;
+	padding: 1em .75em .6875em;
+	width: 100%;
+	background-color: #fff;
+	border: 1px solid #dfe0e6;
+	color: #1c1c1f;
+	font-size: .9375em;
+	line-height: normal;
+	margin: 0;
+}
+
+
+
+
