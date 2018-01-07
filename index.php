@@ -1,5 +1,11 @@
 <?php
 
+include "includes/config.php";
+include "includes/classes/Constants.php";
+include "includes/classes/Account.php";
+$account = new Account($con);
+include 'includes/handlers/login-handler.php';
+
 if (isset($_SESSION['is_user_logged_in'])) {
     $loggedInUser = $_SESSION['is_user_logged_in'];
 } else {
