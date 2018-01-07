@@ -114,7 +114,52 @@ a:hover {
 	line-height: normal;
 	margin: 0;
 }
-
+/*
+Index Page
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+#nowPlayingBarContainer {
+	width: 100%;
+	background-color: #282828;
+	bottom: 0;
+	position: fixed;
+	min-width: 620px;
+}
+#nowPlayingBar {
+	display: flex;
+	height: 90px;
+	padding: 16px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+#nowPlayingBar .content {
+	width: 100%;
+}
+.nowPlayingCenter {
+	width: 40%;
+	max-width: 722px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.nowPlayingLeft,
+.nowPlayingRight {
+	width: 30%;
+	min-width: 180px;
+}
+.player-controls .buttons {
+	margin: 0 auto;
+	display: table;
+}
+.controlButton {
+	background-color: transparent;
+	border: none;
+	vertical-align: middle;
+}
+.controlButton img {
+	width: 32px;
+	height: 32px;
+}
 
 
 
