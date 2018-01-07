@@ -157,8 +157,16 @@ Index Page
 	vertical-align: middle;
 }
 .controlButton img {
+	width: 20px;
+	height: 20px;
+}
+.controlButton.play img,
+.controlButton.pause img {
 	width: 32px;
 	height: 32px;
+}
+.controlButton:hover {
+	cursor: pointer;
 }
 
 

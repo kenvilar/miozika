@@ -46,6 +46,9 @@ if (isset($_SESSION['is_user_logged_in'])) {
                     <button class="controlButton play" title="Play Button">
                         <img src="assets/images/icons/play.png" alt="play">
                     </button>
+                    <button class="controlButton pause" title="Pause Button">
+                        <img src="assets/images/icons/pause.png" alt="pause">
+                    </button>
                     <button class="controlButton next" title="Next Button">
                         <img src="assets/images/icons/next.png" alt="next">
                     </button>
