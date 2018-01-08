@@ -33,7 +33,13 @@ if (isset($_SESSION['is_user_logged_in'])) {
 
 <div id="nowPlayingBarContainer">
     <div id="nowPlayingBar">
-        <div class="nowPlayingLeft"></div>
+        <div class="nowPlayingLeft">
+            <div class="content">
+                <span class="albumLink">
+                    <img src="http://i.ytimg.com/vi/rb8Y38eilRM/maxresdefault.jpg" class="albumArtWork" alt="album">
+                </span>
+            </div>
+        </div>
         <div class="nowPlayingCenter">
             <div class="content player-controls">
                 <div class="buttons">
@@ -59,7 +65,7 @@ if (isset($_SESSION['is_user_logged_in'])) {
                 <div class="playbackBar">
                     <span class="progressTime current">0.00</span>
                     <div class="progressBar">
-                        <div class="progressBarBg">
+                        <div class="middle-align progressBarBg">
                             <div class="progress"></div>
                         </div>
                     </div>
@@ -67,7 +73,9 @@ if (isset($_SESSION['is_user_logged_in'])) {
                 </div>
             </div>
         </div>
-        <div class="nowPlayingRight"></div>
+        <div class="nowPlayingRight">
+            <div class="content"></div>
+        </div>
     </div>
 </div>
 
