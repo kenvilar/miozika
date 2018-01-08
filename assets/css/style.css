@@ -3,6 +3,10 @@ html, body {
 	margin: 0;
 	height: 100%;
 }
+* {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #fff;
+}
 a:hover {
 	text-decoration: none;
 	color: inherit;
@@ -224,6 +228,14 @@ Index Page
 	float: left;
 	-webkit-background-size: cover;
 	background-size: cover;
+}
+.nowPlayingLeft .trackInfo {
+	display: table;
+}
+.nowPlayingLeft .trackInfo .trackName {
+	margin: 5px 0;
+	display: inline-table;
+	width: 100%;
 }
 
 

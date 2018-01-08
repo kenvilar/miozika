@@ -38,6 +38,14 @@ if (isset($_SESSION['is_user_logged_in'])) {
                 <span class="albumLink">
                     <img src="http://i.ytimg.com/vi/rb8Y38eilRM/maxresdefault.jpg" class="albumArtWork" alt="album">
                 </span>
+                <div class="trackInfo">
+                    <span class="trackName">
+                        <span>Song Title</span>
+                    </span>
+                    <span class="artistName">
+                        <span>Song Artist</span>
+                    </span>
+                </div>
             </div>
         </div>
         <div class="nowPlayingCenter">
