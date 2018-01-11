@@ -82,7 +82,16 @@ if (isset($_SESSION['is_user_logged_in'])) {
             </div>
         </div>
         <div class="nowPlayingRight">
-            <div class="content"></div>
+            <div class="volumeBar">
+                <button class="controlButton volume" title="Volume Button">
+                    <img src="assets/images/icons/volume.png" alt="Volume Button">
+                </button>
+                <div class="progressBar">
+                    <div class="middle-align progressBarBg">
+                        <div class="progress"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

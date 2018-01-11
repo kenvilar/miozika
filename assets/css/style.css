@@ -166,6 +166,9 @@ Index Page
 	border: none;
 	vertical-align: middle;
 }
+.controlButton:focus, .controlButton:active, .controlButton:hover {
+	outline: none;
+}
 .controlButton img {
 	width: 20px;
 	height: 20px;
@@ -236,6 +239,18 @@ Index Page
 	margin: 5px 0;
 	display: inline-table;
 	width: 100%;
+}
+.nowPlayingRight {
+	position: relative;
+	margin-top: 30px;
+}
+.nowPlayingRight .volumeBar {
+	width: 180px;
+	position: absolute;
+	right: 0;
+}
+.nowPlayingRight .volumeBar .progressBar {
+	width: 125px;
 }
 
 
