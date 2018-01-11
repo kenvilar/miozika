@@ -31,7 +31,11 @@ if (isset($_SESSION['is_user_logged_in'])) {
 
     <div id="topContainer">
         <div id="navBarContainer">
-
+            <nav class="navBar">
+                <a href="/" class="logo">
+                    <img src="assets/images/icons/" alt="Logo">
+                </a>
+            </nav>
         </div>
     </div>
 
