@@ -252,7 +252,18 @@ Index Page
 .nowPlayingRight .volumeBar .progressBar {
 	width: 125px;
 }
-
+#topContainer {
+	min-height: 100%;
+	width: 100%;
+}
+#topContainer #navBarContainer {
+	background-color: #000;
+	width: 220px;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
 
 
 
