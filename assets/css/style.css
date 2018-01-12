@@ -7,6 +7,9 @@ html, body {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #fff;
 }
+a {
+	color: inherit;
+}
 a:hover {
 	text-decoration: none;
 	color: inherit;
@@ -263,6 +266,27 @@ Index Page
 	position: fixed;
 	top: 0;
 	left: 0;
+}
+#topContainer #navBarContainer .navBar {
+	padding: 25px;
+	display: flex;
+	flex-direction: column;
+	-ms-flex-direction: column;
+	-webkit-flex-direction: column;
+}
+#topContainer #navBarContainer .navBar .group {
+	border-top: 1px solid #a0a0a0;
+	padding: 10px 0;
+}
+#topContainer #navBarContainer .navBar .group .navItem {
+	padding: 10px;
+	font-size: 16px;
+	font-weight: 700;
+	display: block;
+	letter-spacing: 1px;
+}
+.logo img {
+	width: 32px;
 }
 
 

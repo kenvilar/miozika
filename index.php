@@ -35,6 +35,22 @@ if (isset($_SESSION['is_user_logged_in'])) {
                 <a href="/" class="logo">
                     <img src="assets/images/icons/logo.png" alt="Logo">
                 </a>
+                <div class="group">
+                    <div class="navItem">
+                        <a href="search.php" class="navItemLink">Search</a>
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="navItem">
+                        <a href="browse.php" class="navItemLink">Browse</a>
+                    </div>
+                    <div class="navItem">
+                        <a href="yourMusic.php" class="navItemLink">Your Music</a>
+                    </div>
+                    <div class="navItem">
+                        <a href="profile.php" class="navItemLink">Song Artist</a>
+                    </div>
+                </div>
             </nav>
         </div>
     </div>
