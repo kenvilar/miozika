@@ -279,11 +279,25 @@ Index Page
 	padding: 10px 0;
 }
 #topContainer #navBarContainer .navBar .group .navItem {
-	padding: 10px;
-	font-size: 16px;
+	padding: 10px 0;
+	font-size: 14px;
 	font-weight: 700;
 	display: block;
 	letter-spacing: 1px;
+	position: relative;
+}
+#topContainer #navBarContainer .navBar .group .navItem .navItemLink {
+	color: #a0a0a0;
+	text-decoration: none;
+}
+.icon {
+	top: 0;
+	right: 0;
+	width: 25px;
+	float: right;
+}
+.logo {
+	margin-bottom: 15px;
 }
 .logo img {
 	width: 32px;
