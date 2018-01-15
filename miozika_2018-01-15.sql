@@ -7,7 +7,7 @@
 #
 # Host: localhost (MySQL 5.7.19)
 # Database: miozika
-# Generation Time: 2018-01-15 12:01:22 +0000
+# Generation Time: 2018-01-15 12:05:19 +0000
 # ************************************************************
 
 
@@ -40,7 +40,12 @@ LOCK TABLES `albums` WRITE;
 INSERT INTO `albums` (`id`, `title`, `artist`, `genre`, `artworkPath`)
 VALUES
 	(1,'Bacon and Eggs',2,4,'assets/images/artwork/clearday.jpg'),
-	(3,'Pizza Head',5,10,'assets/images/artwork/energy.jpg');
+	(3,'Pizza Head',5,10,'assets/images/artwork/energy.jpg'),
+	(4,'Summer Hits',3,1,'assets/images/artwork/goinghigher.jpg'),
+	(5,'The Movie Soundtrack',2,9,'assets/images/artwork/funkyelement.jpg'),
+	(6,'Best of the Worst',1,3,'assets/images/artwork/popdance.jpg'),
+	(7,'Hello World',3,6,'assets/images/artwork/ukulele.jpg'),
+	(8,'Best Beats',4,7,'assets/images/artwork/sweet.jpg');
 
 /*!40000 ALTER TABLE `albums` ENABLE KEYS */;
 UNLOCK TABLES;
