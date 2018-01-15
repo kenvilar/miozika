@@ -7,7 +7,7 @@
 #
 # Host: localhost (MySQL 5.7.19)
 # Database: miozika
-# Generation Time: 2018-01-15 10:56:18 +0000
+# Generation Time: 2018-01-15 12:01:22 +0000
 # ************************************************************
 
 
@@ -34,6 +34,16 @@ CREATE TABLE `albums` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+LOCK TABLES `albums` WRITE;
+/*!40000 ALTER TABLE `albums` DISABLE KEYS */;
+
+INSERT INTO `albums` (`id`, `title`, `artist`, `genre`, `artworkPath`)
+VALUES
+	(1,'Bacon and Eggs',2,4,'assets/images/artwork/clearday.jpg'),
+	(3,'Pizza Head',5,10,'assets/images/artwork/energy.jpg');
+
+/*!40000 ALTER TABLE `albums` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table artists
@@ -47,6 +57,19 @@ CREATE TABLE `artists` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+LOCK TABLES `artists` WRITE;
+/*!40000 ALTER TABLE `artists` DISABLE KEYS */;
+
+INSERT INTO `artists` (`id`, `name`)
+VALUES
+	(1,'Captain Planet'),
+	(2,'CoCo'),
+	(3,'Naruto'),
+	(4,'Goku'),
+	(5,'Ken Vilar');
+
+/*!40000 ALTER TABLE `artists` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table genres
@@ -60,6 +83,24 @@ CREATE TABLE `genres` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+LOCK TABLES `genres` WRITE;
+/*!40000 ALTER TABLE `genres` DISABLE KEYS */;
+
+INSERT INTO `genres` (`id`, `name`)
+VALUES
+	(1,'Rock'),
+	(2,'Pop'),
+	(3,'Hip-hop'),
+	(4,'Rap'),
+	(5,'R&B'),
+	(6,'Classical'),
+	(7,'Techno'),
+	(8,'Jazz'),
+	(9,'Folk'),
+	(10,'Country');
+
+/*!40000 ALTER TABLE `genres` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table songs
