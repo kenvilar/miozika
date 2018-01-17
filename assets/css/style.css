@@ -290,6 +290,9 @@ Index Page
 	color: #a0a0a0;
 	text-decoration: none;
 }
+#topContainer #navBarContainer .navBar .group .navItem .navItemLink:hover {
+	color: #fff;
+}
 .icon {
 	top: 0;
 	right: 0;
