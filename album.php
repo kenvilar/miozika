@@ -23,4 +23,18 @@ $artistName = $artist->getName();
 //Get the Album Artwork Image
 $albumUrl = $album->getArtWorkPath();
 
+?>
+
+<div class="entityInfo">
+    <div class="leftSection">
+        <img src="<?php echo $albumUrl; ?>" alt="image">
+    </div>
+    <div class="rightSection">
+        <h2><?php echo $albumTitle; ?></h2>
+        <span>By <?php echo $artistName; ?></span>
+    </div>
+</div>
+
+<?php
+
 include 'includes/layouts/footer.php'; ?>
