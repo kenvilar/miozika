@@ -307,6 +307,30 @@ Index Page
 #mainContent {
 	padding: 0 20px;
 }
+.entityInfo {
+	padding: 40px 0 10px 0;
+	display: inline-block;
+	width: 100%;
+}
+.entityInfo .leftSection {
+	width: 30%;
+	float: left;
+	max-width: 250px;
+}
+.entityInfo .leftSection img {
+	width: 100%;
+}
+.entityInfo .rightSection {
+	width: 70%;
+	float: left;
+	padding: 5px 10px 5px 40px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.entityInfo .rightSection h2 {
+	margin-top: 0;
+}
 .icon {
 	top: 0;
 	right: 0;
