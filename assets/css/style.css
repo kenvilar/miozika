@@ -3,6 +3,11 @@ html, body {
 	margin: 0;
 	height: 100%;
 }
+body {
+	background-color: #181818;
+	font-size: 14px;
+	min-width: 720px;
+}
 * {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #fff;
@@ -292,6 +297,14 @@ Index Page
 }
 #topContainer #navBarContainer .navBar .group .navItem .navItemLink:hover {
 	color: #fff;
+}
+#mainViewContainer {
+	margin-left: 220px;
+	padding-bottom: 90px;
+	width: calc(100% - 220px);
+}
+#mainContent {
+	padding: 0 20px;
 }
 .icon {
 	top: 0;

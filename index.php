@@ -30,9 +30,17 @@ if (isset($_SESSION['is_user_logged_in'])) {
 <div id="mainContainer">
 
     <div id="topContainer">
+
         <?php
         include 'includes/layouts/navbarContainer.php';
         ?>
+
+        <div id="mainViewContainer">
+            <div id="mainContent">
+
+            </div>
+        </div>
+
     </div>
 
     <?php
