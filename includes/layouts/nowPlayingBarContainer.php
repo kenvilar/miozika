@@ -7,7 +7,7 @@
         <div class="nowPlayingLeft">
             <div class="content">
                 <span class="albumLink">
-                    <img src="//i.ytimg.com/vi/rb8Y38eilRM/maxresdefault.jpg" class="albumArtWork" alt="album">
+                    <img src="assets/images/maxresdefault.jpg" class="albumArtWork" alt="album">
                 </span>
                 <div class="trackInfo">
                     <span class="trackName">
