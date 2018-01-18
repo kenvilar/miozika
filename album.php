@@ -10,13 +10,13 @@ endif;
 
 $albumQuery = mysqli_query($con, "SELECT * FROM albums WHERE id='$albumId'");
 $album = mysqli_fetch_assoc($albumQuery);
-
 $artistId = $album['artist'];
 
-$artistQuery = mysqli_query($con, "SELECT * FROM artists WHERE id='$artistId'");
-$artist = mysqli_fetch_assoc($artistQuery);
+/*$artistQuery = mysqli_query($con, "SELECT * FROM artists WHERE id='$artistId'");
+$artist = mysqli_fetch_assoc($artistQuery);*/
 
+$artist = new Artist($con, $artistId);
+echo $artist->getName() . '<br>';
 echo $album['title'] . '<br>';
-echo $artist['name'];
 
 include 'includes/layouts/footer.php'; ?>

@@ -3,6 +3,7 @@
 include "includes/config.php";
 include "includes/classes/Constants.php";
 include "includes/classes/Account.php";
+include 'includes/classes/Artist.php';
 $account = new Account($con);
 include 'includes/handlers/login-handler.php';
 
