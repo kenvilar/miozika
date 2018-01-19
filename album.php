@@ -47,11 +47,17 @@ $numOfSongs = $album->getNumberOfSongs();
         foreach ($songIdArr as $songId) {
             $albumSong = new Song($con, $songId);
             $albumArtist = $albumSong->getArtist();
+            $songtitle = $albumSong->getTitle();
+            $songArtist = $albumSong->getArtist()->getName();
 
             echo '<li class="trackListRow">';
             echo '    <div class="trackCount">';
             echo '        <img class="play" src="assets/images/icons/play-white.png" alt="image">';
-            echo "        <span class='trackNumer'>{$i}</span>";
+            echo "        <span class='trackNumber'>{$i}</span>";
+            echo '    </div>';
+            echo '    <div class="trackInfo">';
+            echo "        <span class='trackName'>{$songtitle}</span>";
+            echo "        <span class='artistName'>{$songArtist}</span>";
             echo '    </div>';
             echo '</li>';
 
