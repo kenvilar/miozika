@@ -23,6 +23,9 @@ $artistName = $artist->getName();
 //Get the Album Artwork Image
 $albumUrl = $album->getArtWorkPath();
 
+//Get the number of songs
+$numOfSongs = $album->getNumberOfSongs();
+
 ?>
 
 <div class="entityInfo">
@@ -31,7 +34,8 @@ $albumUrl = $album->getArtWorkPath();
     </div>
     <div class="rightSection">
         <h2><?php echo $albumTitle; ?></h2>
-        <span>By <?php echo $artistName; ?></span>
+        <p>By <?php echo $artistName; ?></p>
+        <p><?php echo $numOfSongs; ?> songs</p>
     </div>
 </div>
 

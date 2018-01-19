@@ -331,6 +331,10 @@ Index Page
 .entityInfo .rightSection h2 {
 	margin-top: 0;
 }
+.entityInfo .rightSection p {
+	color: #939393;
+	font-weight: 200;
+}
 .icon {
 	top: 0;
 	right: 0;
