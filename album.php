@@ -40,7 +40,7 @@ $numOfSongs = $album->getNumberOfSongs();
 </div>
 
 <div class="trackListContainer">
-    <ul>
+    <ul class="track-list">
         <?php
         $songIdArr = $album->getSongIds();
         $i = 1;
@@ -49,17 +49,28 @@ $numOfSongs = $album->getNumberOfSongs();
             $albumArtist = $albumSong->getArtist();
             $songtitle = $albumSong->getTitle();
             $songArtist = $albumSong->getArtist()->getName();
+            $songDuration = $albumSong->getDuration();
 
-            echo '<li class="trackListRow">';
-            echo '    <div class="trackCount">';
-            echo '        <img class="play" src="assets/images/icons/play-white.png" alt="image">';
-            echo "        <span class='trackNumber'>{$i}</span>";
-            echo '    </div>';
-            echo '    <div class="trackInfo">';
-            echo "        <span class='trackName'>{$songtitle}</span>";
-            echo "        <span class='artistName'>{$songArtist}</span>";
-            echo '    </div>';
-            echo '</li>';
+            ?>
+
+            <li class="trackListRow">
+                <div class="trackCount">
+                    <img class="play" src="assets/images/icons/play-white.png" alt="image">
+                    <span class='trackNumber'><?php echo $i; ?></span>
+                </div>
+                <div class="trackInfo">
+                    <span class='trackName'><?php echo $songtitle; ?></span>
+                    <span class='artistName'><?php echo $songArtist; ?></span>
+                </div>
+                <div class="trackOptions">
+                    <img class="optionsButton" src="assets/images/icons/more.png" alt="image">
+                </div>
+                <div class="trackDuration">
+                    <span class="duration"><?php echo $songDuration; ?></span>
+                </div>
+            </li>
+
+            <?php
 
             $i++;
         }
