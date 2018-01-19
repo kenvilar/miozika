@@ -39,6 +39,28 @@ $numOfSongs = $album->getNumberOfSongs();
     </div>
 </div>
 
+<div class="trackListContainer">
+    <ul>
+        <?php
+        $songIdArr = $album->getSongIds();
+        $i = 1;
+        foreach ($songIdArr as $songId) {
+            $albumSong = new Song($con, $songId);
+            $albumArtist = $albumSong->getArtist();
+
+            echo '<li class="trackListRow">';
+            echo '    <div class="trackCount">';
+            echo '        <img class="play" src="assets/images/icons/play-white.png" alt="image">';
+            echo "        <span class='trackNumer'>{$i}</span>";
+            echo '    </div>';
+            echo '</li>';
+
+            $i++;
+        }
+        ?>
+    </ul>
+</div>
+
 <?php
 
 include 'includes/layouts/footer.php'; ?>
