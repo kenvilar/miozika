@@ -1,14 +1,15 @@
+</div> <!--#mainContent-->
+</div> <!--#mainViewContainer-->
 
-            </div>
-        </div>
+</div> <!--#topContainer-->
 
-    </div>
+<?php
+include 'includes/layouts/nowPlayingBarContainer.php';
+?>
 
-    <?php
-    include 'includes/layouts/nowPlayingBarContainer.php';
-    ?>
+</div> <!--#mainContainer"-->
 
-</div>
-
+<script src="./assets/js/jquery.min.js"></script>
+<script src="./assets/js/main.js"></script>
 </body>
 </html>
