@@ -13,9 +13,6 @@ $jsonArr = json_encode($songArr);
 ?>
 
 <script>
-</script>
-
-<script>
 	$(document).ready(function () {
 		currentPlaylist = <?php echo $jsonArr; ?>;
 		audioElement = new Audio();
@@ -23,7 +20,33 @@ $jsonArr = json_encode($songArr);
 	});
 
 	function setTrack(trackId, newPlaylist, play) {
-		audioElement.setTrack('assets/music/bensound-clearday.mp3');
+		$.post(
+			'includes/handlers/ajax/getSongJson.php',
+			{
+				songId: trackId
+			},
+			function (data) {
+				var track = JSON.parse(data);
+				$('.trackName span').text(track.title);
+
+				$.post(
+					'includes/handlers/ajax/getArtistJson.php',
+					{
+						artistId: track.artist
+					},
+					function (data) {
+						var artist = JSON.parse(data);
+						$('.artistName span').text(artist.name);
+					}
+				);
+
+				audioElement.setTrack(track.path);
+				audioElement.play();
+			}
+		);
+
+		//audioElement.setTrack('assets/music/bensound-clearday.mp3');
+
 		if (play) {
 			playSong();
 		}
@@ -51,7 +74,7 @@ $jsonArr = json_encode($songArr);
                 </span>
                 <div class="trackInfo">
                     <span class="trackName">
-                        <span>Song Title</span>
+                        <span></span>
                     </span>
                     <span class="artistName">
                         <span>Song Artist</span>
