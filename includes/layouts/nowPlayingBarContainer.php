@@ -26,7 +26,7 @@ $jsonArr = json_encode($songArr);
 				songId: trackId
 			},
 			function (data) {
-				var track = JSON.parse(data);
+				var track = JSON.parse(data); //example result {id: "6", title: "Going Higher", artist: "2", album: "1", genre: "1", …}
 				$('.trackName span').text(track.title);
 
 				$.post(
@@ -35,8 +35,19 @@ $jsonArr = json_encode($songArr);
 						artistId: track.artist
 					},
 					function (data) {
-						var artist = JSON.parse(data);
+						var artist = JSON.parse(data); //example result {id: "2", name: "CoCo"}
 						$('.artistName span').text(artist.name);
+					}
+				);
+
+				$.post(
+					'includes/handlers/ajax/getAlbumJson.php',
+					{
+						albumId: track.album
+					},
+					function (data) {
+						var album = JSON.parse(data); //example result {id: "1", title: "Bacon and Eggs", artist: "2", genre: "4", artworkPath: "assets/images/artwork/clearday.jpg"}
+						$('.albumLink .albumArtWork').attr('src', album.artworkPath);
 					}
 				);
 
@@ -44,8 +55,6 @@ $jsonArr = json_encode($songArr);
 				audioElement.play();
 			}
 		);
-
-		//audioElement.setTrack('assets/music/bensound-clearday.mp3');
 
 		if (play) {
 			playSong();
@@ -77,7 +86,7 @@ $jsonArr = json_encode($songArr);
                         <span></span>
                     </span>
                     <span class="artistName">
-                        <span>Song Artist</span>
+                        <span></span>
                     </span>
                 </div>
             </div>
