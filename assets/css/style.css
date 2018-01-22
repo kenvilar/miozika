@@ -187,6 +187,9 @@ Index Page
 	width: 32px;
 	height: 32px;
 }
+.controlButton.pause {
+	display: none;
+}
 .controlButton:hover {
 	cursor: pointer;
 }

@@ -30,10 +30,14 @@ $jsonArr = json_encode($songArr);
 	}
 
 	function playSong() {
+		$('.controlButton.play').hide();
+		$('.controlButton.pause').show();
 		audioElement.play();
 	}
 
 	function playPause() {
+		$('.controlButton.pause').hide();
+		$('.controlButton.play').show();
 		audioElement.pause();
 	}
 </script>
@@ -64,10 +68,10 @@ $jsonArr = json_encode($songArr);
                     <button class="controlButton previous" title="Previous Button">
                         <img src="assets/images/icons/previous.png" alt="previous">
                     </button>
-                    <button class="controlButton play" title="Play Button">
+                    <button class="controlButton play" title="Play Button" onclick="playSong();">
                         <img src="assets/images/icons/play.png" alt="play">
                     </button>
-                    <button class="controlButton pause" title="Pause Button">
+                    <button class="controlButton pause" title="Pause Button" onclick="playPause();">
                         <img src="assets/images/icons/pause.png" alt="pause">
                     </button>
                     <button class="controlButton next" title="Next Button">
