@@ -1,10 +1,10 @@
-(function ($) {
+var currentPlaylist = [];
+var audioElement;
 
-	function Audio() {
-		this.audio = document.createElement('audio');
-		this.setTrack  = function () {
-			this.audio.src = src;
-		}
-	}
+function Audio() {
+	this.audio = document.createElement('audio');
 
-})(jQuery);
+	this.setTrack  = function (src) {
+		this.audio.src = src;
+	};
+}

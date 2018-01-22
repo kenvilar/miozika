@@ -1,6 +1,34 @@
 <?php
 /*Now Playing Bar Container*/
+
+$songQuery = mysqli_query($con, "SELECT * FROM songs ORDER BY RAND() LIMIT 10");
+$songArr = array();
+
+while ($row = mysqli_fetch_assoc($songQuery)) :
+    array_push($songArr, $row['id']);
+endwhile;
+
+$jsonArr = json_encode($songArr);
+
 ?>
+
+<script>
+</script>
+
+<script>
+	$(document).ready(function () {
+		currentPlaylist = <?php echo $jsonArr; ?>;
+		audioElement = new Audio();
+		setTrack(currentPlaylist[0], currentPlaylist, false);
+	});
+
+	function setTrack(trackId, newPlaylist, play) {
+        audioElement.setTrack('assets/music/bensound-clearday.mp3');
+        if (play) {
+	        audioElement.audio.play();
+        }
+    }
+</script>
 
 <div id="nowPlayingBarContainer">
     <div id="nowPlayingBar">
