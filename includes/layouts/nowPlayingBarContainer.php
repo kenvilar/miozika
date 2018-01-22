@@ -23,11 +23,19 @@ $jsonArr = json_encode($songArr);
 	});
 
 	function setTrack(trackId, newPlaylist, play) {
-        audioElement.setTrack('assets/music/bensound-clearday.mp3');
-        if (play) {
-	        audioElement.play();
-        }
-    }
+		audioElement.setTrack('assets/music/bensound-clearday.mp3');
+		if (play) {
+			playSong();
+		}
+	}
+
+	function playSong() {
+		audioElement.play();
+	}
+
+	function playPause() {
+		audioElement.pause();
+	}
 </script>
 
 <div id="nowPlayingBarContainer">
