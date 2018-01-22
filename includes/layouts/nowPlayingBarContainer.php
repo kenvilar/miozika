@@ -25,7 +25,7 @@ $jsonArr = json_encode($songArr);
 	function setTrack(trackId, newPlaylist, play) {
         audioElement.setTrack('assets/music/bensound-clearday.mp3');
         if (play) {
-	        audioElement.audio.play();
+	        audioElement.play();
         }
     }
 </script>
