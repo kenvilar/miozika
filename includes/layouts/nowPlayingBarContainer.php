@@ -67,10 +67,10 @@ $jsonArr = json_encode($songArr);
 		if (audioElement.audio.currentTime === 0) {
 			$.post(
 				'includes/handlers/ajax/updatePlays.php',
-                {
-                	songId: audioElement.currentPlaying.id
-                }
-            );
+				{
+					songId: audioElement.currentPlaying.id
+				}
+			);
 		}
 		$('.controlButton.play').hide();
 		$('.controlButton.pause').show();
@@ -124,13 +124,13 @@ $jsonArr = json_encode($songArr);
                     </button>
                 </div>
                 <div class="playbackBar">
-                    <span class="progressTime current">0.00</span>
+                    <span class="progressTime current"></span>
                     <div class="progressBar">
                         <div class="middle-align progressBarBg">
                             <div class="progress"></div>
                         </div>
                     </div>
-                    <span class="progressTime remaining">0.00</span>
+                    <span class="progressTime remaining"></span>
                 </div>
             </div>
         </div>
