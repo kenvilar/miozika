@@ -51,8 +51,10 @@ $jsonArr = json_encode($songArr);
 					}
 				);
 
-				audioElement.setTrack(track.path);
-				audioElement.play();
+				audioElement.setTrack(track); //This is now track path based on the main.js
+				if (play) {
+					playSong();
+				}
 			}
 		);
 
@@ -62,6 +64,14 @@ $jsonArr = json_encode($songArr);
 	}
 
 	function playSong() {
+		if (audioElement.audio.currentTime === 0) {
+			$.post(
+				'includes/handlers/ajax/updatePlays.php',
+                {
+                	songId: audioElement.currentPlaying.id
+                }
+            );
+		}
 		$('.controlButton.play').hide();
 		$('.controlButton.pause').show();
 		audioElement.play();
