@@ -10,17 +10,8 @@ function formatTime(timeInSeconds) {
 	var finalSeconds;
 
 	//Add prefix 0 if minutes and seconds are less than 0
-	if (minutes < 10) {
-		finalminutes = '0' + minutes;
-	} else {
-		finalminutes = minutes;
-	}
-
-	if (seconds < 10) {
-		finalSeconds = '0' + seconds;
-	} else {
-		finalSeconds = seconds;
-	}
+	finalminutes = minutes < 10 ? '0' + minutes : minutes;
+	finalSeconds = seconds < 10 ? '0' + seconds : seconds;
 
 	return finalminutes + ':' + finalSeconds;
 }
