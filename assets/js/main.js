@@ -52,4 +52,8 @@ function Audio() {
 	this.pause = function () {
 		this.audio.pause();
 	};
+
+	this.setTime = function (seconds) {
+		this.audio.currentTime = seconds;
+	}
 }

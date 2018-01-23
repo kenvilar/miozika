@@ -28,13 +28,17 @@ $jsonArr = json_encode($songArr);
 			}
 		});
 
-		$('.playbackBar .progressBar').mouseup(function () {
+		$('.playbackBar .progressBar').mouseup(function (e) {
 			timeFromOffset(e, this);
+		});
+
+		$(document).mouseup(function () {
+            mouseDown = false;
 		});
 	});
 
 	function timeFromOffset(mouse, progressBar) {
-		var percentage = mouse.offsetX / $(this).width() * 100;
+		var percentage = mouse.offsetX / $(progressBar).width() * 100;
 		var seconds = audioElement.audio.duration * (percentage / 100);
 		audioElement.setTime(seconds);
 	}
