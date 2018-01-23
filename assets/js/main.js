@@ -25,6 +25,10 @@ function Audio() {
 		$('.progressTime.remaining').text(songDuration);
 	});
 
+	this.audio.addEventListener('timeupdate', function () {
+		// TODO
+	});
+
 	this.setTrack = function (track) {
 		this.currentPlaying = track;
 		this.audio.src = track.path;
