@@ -184,7 +184,7 @@ $jsonArr = json_encode($songArr);
                     <button class="controlButton pause" title="Pause Button" onclick="playPause();">
                         <img src="assets/images/icons/pause.png" alt="pause">
                     </button>
-                    <button class="controlButton next" title="Next Button">
+                    <button class="controlButton next" title="Next Button" onclick="nextSong();">
                         <img src="assets/images/icons/next.png" alt="next">
                     </button>
                     <button class="controlButton repeat" title="Repeat Button">
