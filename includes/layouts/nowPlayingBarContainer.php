@@ -15,6 +15,7 @@ $jsonArr = json_encode($songArr);
 <script>
 	$(document).ready(function () {
 		currentPlaylist = <?php echo $jsonArr; ?>;
+		console.log(currentPlaylist);
 		audioElement = new Audio();
 		setTrack(currentPlaylist[0], currentPlaylist, false);
 		updateVolumeProgressBar(audioElement.audio);
@@ -74,6 +75,17 @@ $jsonArr = json_encode($songArr);
 		audioElement.setTime(seconds);
 	}
 
+	function nextSong() {
+		if (currentIndex == currentPlaylist.length - 1) {
+			currentIndex = 0;
+		} else {
+			currentIndex = currentIndex + 1;
+		}
+
+		var trackToPlay = currentPlaylist[currentIndex];
+		setTrack(trackToPlay, currentPlaylist, true);
+	}
+
 	function setTrack(trackId, newPlaylist, play) {
 		$.post(
 			'includes/handlers/ajax/getSongJson.php',
@@ -81,6 +93,7 @@ $jsonArr = json_encode($songArr);
 				songId: trackId
 			},
 			function (data) {
+				currentIndex = currentPlaylist.indexOf(trackId);
 				var track = JSON.parse(data); //example result {id: "6", title: "Going Higher", artist: "2", album: "1", genre: "1", …}
 				$('.trackName span').text(track.title);
 
