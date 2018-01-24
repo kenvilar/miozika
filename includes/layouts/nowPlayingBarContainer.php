@@ -153,6 +153,12 @@ $jsonArr = json_encode($songArr);
 		audioElement.play();
 	}
 
+	function repeatSong() {
+		repeat = !repeat;
+		var repeatImageUrl = repeat ? 'assets/images/icons/repeat-active.png' : 'assets/images/icons/repeat.png';
+		$('.controlButton.repeat img').attr('src', repeatImageUrl);
+	}
+
 	function playPause() {
 		$('.controlButton.pause').hide();
 		$('.controlButton.play').show();
@@ -195,7 +201,7 @@ $jsonArr = json_encode($songArr);
                     <button class="controlButton next" title="Next Button" onclick="nextSong();">
                         <img src="assets/images/icons/next.png" alt="next">
                     </button>
-                    <button class="controlButton repeat" title="Repeat Button">
+                    <button class="controlButton repeat" title="Repeat Button" onclick="repeatSong();">
                         <img src="assets/images/icons/repeat.png" alt="repeat">
                     </button>
                 </div>
