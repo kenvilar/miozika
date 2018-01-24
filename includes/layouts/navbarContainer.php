@@ -5,7 +5,7 @@
 <div id="navBarContainer">
     <nav class="navBar">
         <a href="/" class="logo">
-            <img src="assets/images/icons/logo.png" alt="Logo">
+            <img src="assets/images/logo/logo-white.png" alt="Logo">
         </a>
         <div class="group">
             <div class="navItem">
