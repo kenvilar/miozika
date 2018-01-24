@@ -76,7 +76,13 @@ $jsonArr = json_encode($songArr);
 	}
 
 	function nextSong() {
-		if (currentIndex == currentPlaylist.length - 1) {
+		if (repeat === true) {
+			audioElement.setTime(0);
+			playSong();
+			return;
+		}
+
+		if (currentIndex === currentPlaylist.length - 1) {
 			currentIndex = 0;
 		} else {
 			currentIndex = currentIndex + 1;
@@ -87,13 +93,15 @@ $jsonArr = json_encode($songArr);
 	}
 
 	function setTrack(trackId, newPlaylist, play) {
+		currentIndex = currentPlaylist.indexOf(trackId);
+		playPause();
+
 		$.post(
 			'includes/handlers/ajax/getSongJson.php',
 			{
 				songId: trackId
 			},
 			function (data) {
-				currentIndex = currentPlaylist.indexOf(trackId);
 				var track = JSON.parse(data); //example result {id: "6", title: "Going Higher", artist: "2", album: "1", genre: "1", …}
 				$('.trackName span').text(track.title);
 
