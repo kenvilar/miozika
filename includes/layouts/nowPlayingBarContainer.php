@@ -19,6 +19,10 @@ $jsonArr = json_encode($songArr);
 		setTrack(currentPlaylist[0], currentPlaylist, false);
 		updateVolumeProgressBar(audioElement.audio);
 
+		$('#nowPlayingBarContainer').on('mousedown touchstart mousemove touchmove', function (e) {
+			e.preventDefault();
+		});
+
 		//For time duration
 		$('.playbackBar .progressBar').mousedown(function () {
 			mouseDown = true;
