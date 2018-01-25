@@ -173,6 +173,12 @@ $jsonArr = json_encode($songArr);
 		$('.controlButton.play').show();
 		audioElement.pause();
 	}
+
+	function muteSOng() {
+		audioElement.audio.muted = !audioElement.audio.muted;
+		var muteImageUrl = audioElement.audio.muted ? 'assets/images/icons/volume.png' : 'assets/images/icons/volume-mute.png';
+		$('.controlButton.volume img').attr('src', muteImageUrl);
+	}
 </script>
 
 <div id="nowPlayingBarContainer">
@@ -227,7 +233,7 @@ $jsonArr = json_encode($songArr);
         </div>
         <div class="nowPlayingRight">
             <div class="volumeBar">
-                <button class="controlButton volume" title="Volume Button">
+                <button class="controlButton volume" title="Volume Button" onclick="muteSOng();">
                     <img src="assets/images/icons/volume.png" alt="Volume Button">
                 </button>
                 <div class="progressBar">
