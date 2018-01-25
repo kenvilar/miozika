@@ -102,6 +102,12 @@ $jsonArr = json_encode($songArr);
 	}
 
 	function setTrack(trackId, newPlaylist, play) {
+		if (newPlaylist !== currentPlaylist) {
+			currentPlaylist = newPlaylist;
+			shufflePlaylist = currentPlaylist.slice();
+			shuffleArr(shufflePlaylist);
+		}
+
 		currentIndex = currentPlaylist.indexOf(trackId);
 		playPause();
 
@@ -179,6 +185,29 @@ $jsonArr = json_encode($songArr);
 		var muteImageUrl = audioElement.audio.muted ? 'assets/images/icons/volume-mute.png' : 'assets/images/icons/volume.png';
 		$('.controlButton.volume img').attr('src', muteImageUrl);
 	}
+
+	function shuffleSongs() {
+		shuffle = !shuffle;
+		var shuffleImageUrl = shuffle ? 'assets/images/icons/shuffle-active.png' : 'assets/images/icons/shuffle.png';
+		$('.controlButton.shuffle img').attr('src', shuffleImageUrl);
+
+		if (shuffle) {
+			shuffleArr(shufflePlaylist);
+		} else {
+			// go back to normal
+		}
+	}
+
+	//Use to shuffle array og songs. Implemented to shuffleSongs function
+	function shuffleArr(a) {
+		var j, x, i;
+		for (i = a.length - 1; i > 0; i--) {
+			j = Math.floor(Math.random() * (i + 1));
+			x = a[i];
+			a[i] = a[j];
+			a[j] = x;
+		}
+	}
 </script>
 
 <div id="nowPlayingBarContainer">
@@ -201,7 +230,7 @@ $jsonArr = json_encode($songArr);
         <div class="nowPlayingCenter">
             <div class="content player-controls">
                 <div class="buttons">
-                    <button class="controlButton shuffle" title="Shuffle Button">
+                    <button class="controlButton shuffle" title="Shuffle Button" onclick="shuffleSongs();">
                         <img src="assets/images/icons/shuffle.png" alt="shuffle">
                     </button>
                     <button class="controlButton previous" title="Previous Button" onclick="prevSong();">
