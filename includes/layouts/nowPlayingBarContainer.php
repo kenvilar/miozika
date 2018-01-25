@@ -176,7 +176,7 @@ $jsonArr = json_encode($songArr);
 
 	function muteSOng() {
 		audioElement.audio.muted = !audioElement.audio.muted;
-		var muteImageUrl = audioElement.audio.muted ? 'assets/images/icons/volume.png' : 'assets/images/icons/volume-mute.png';
+		var muteImageUrl = audioElement.audio.muted ? 'assets/images/icons/volume-mute.png' : 'assets/images/icons/volume.png';
 		$('.controlButton.volume img').attr('src', muteImageUrl);
 	}
 </script>
