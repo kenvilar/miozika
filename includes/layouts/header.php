@@ -1,16 +1,12 @@
 <?php
 
 include "includes/config.php";
-include "includes/classes/Constants.php";
-include "includes/classes/Account.php";
 include 'includes/classes/Artist.php';
 include 'includes/classes/Album.php';
 include 'includes/classes/Song.php';
-$account = new Account($con);
-include 'includes/handlers/login-handler.php';
 
-if (isset($_SESSION['is_user_logged_in'])) {
-    $loggedInUser = $_SESSION['is_user_logged_in'];
+if (isset($_SESSION['userLoggedIn'])) {
+    $loggedInUser = $_SESSION['userLoggedIn'];
     echo "<script>loggedInUser = '$loggedInUser';</script>";
 } else {
     header('Location: register.php');
