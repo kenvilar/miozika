@@ -4,7 +4,7 @@
 
 <div id="navBarContainer">
     <nav class="navBar">
-        <a href="/" class="logo">
+        <a onclick="openPage('index.php');" class="logo">
             <img src="assets/images/logo/logo-white.png" alt="Logo">
         </a>
         <div class="group">

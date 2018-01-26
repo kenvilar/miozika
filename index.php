@@ -1,4 +1,9 @@
-<?php include 'includes/layouts/header.php'; ?>
+<?php
+
+include 'includes/layouts/header.php';
+include 'includes/includedFiles.php';
+
+?>
 
 <h1 class="heading-big">You Might Also Like</h1>
 <div class="gridViewContainer">

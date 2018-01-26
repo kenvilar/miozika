@@ -8,6 +8,15 @@ var repeat = false;
 var shuffle = false;
 var loggedInUser;
 
+function openPage(url) {
+	if (url.indexOf('?') === -1) {
+		url = url + '?';
+	}
+	var encodedUrl = encodeURI(url + "&loggedInUser=" + loggedInUser);
+	console.log(encodedUrl);
+	$('#mainContent').load(encodedUrl);
+}
+
 function formatTime(timeInSeconds) {
 	var seconds = Math.round(timeInSeconds);
 	var minutes = Math.floor(seconds / 60);
