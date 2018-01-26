@@ -14,10 +14,10 @@ $jsonArr = json_encode($songArr);
 
 <script>
 	$(document).ready(function () {
-		currentPlaylist = <?php echo $jsonArr; ?>;
-		console.log(currentPlaylist);
+		var newPlaylist = <?php echo $jsonArr; ?>;
+		console.log(newPlaylist);
 		audioElement = new Audio();
-		setTrack(currentPlaylist[0], currentPlaylist, false);
+		setTrack(newPlaylist[0], newPlaylist, false);
 		updateVolumeProgressBar(audioElement.audio);
 
 		$('#nowPlayingBarContainer').on('mousedown touchstart mousemove touchmove', function (e) {
@@ -94,11 +94,67 @@ $jsonArr = json_encode($songArr);
 		if (currentIndex === currentPlaylist.length - 1) {
 			currentIndex = 0;
 		} else {
-			currentIndex = currentIndex + 1;
+			currentIndex++;
 		}
 
-		var trackToPlay = currentPlaylist[currentIndex];
+		var trackToPlay = shuffle ? shufflePlaylist[currentIndex] : currentPlaylist[currentIndex];
 		setTrack(trackToPlay, currentPlaylist, true);
+	}
+
+	function playSong() {
+		if (audioElement.audio.currentTime === 0) {
+			$.post(
+				'includes/handlers/ajax/updatePlays.php',
+				{
+					songId: audioElement.currentPlaying.id
+				}
+			);
+		}
+		$('.controlButton.play').hide();
+		$('.controlButton.pause').show();
+		audioElement.play();
+	}
+
+	function repeatSong() {
+		repeat = !repeat;
+		var repeatImageUrl = repeat ? 'assets/images/icons/repeat-active.png' : 'assets/images/icons/repeat.png';
+		$('.controlButton.repeat img').attr('src', repeatImageUrl);
+	}
+
+	function playPause() {
+		$('.controlButton.pause').hide();
+		$('.controlButton.play').show();
+		audioElement.pause();
+	}
+
+	function muteSOng() {
+		audioElement.audio.muted = !audioElement.audio.muted;
+		var muteImageUrl = audioElement.audio.muted ? 'assets/images/icons/volume-mute.png' : 'assets/images/icons/volume.png';
+		$('.controlButton.volume img').attr('src', muteImageUrl);
+	}
+
+	function shuffleSongs() {
+		shuffle = !shuffle;
+		var shuffleImageUrl = shuffle ? 'assets/images/icons/shuffle-active.png' : 'assets/images/icons/shuffle.png';
+		$('.controlButton.shuffle img').attr('src', shuffleImageUrl);
+
+		if (shuffle) {
+			shuffleArr(shufflePlaylist);
+			currentIndex = shufflePlaylist.indexOf(audioElement.currentPlaying.id);
+		} else {
+			currentIndex = currentPlaylist.indexOf(audioElement.currentPlaying.id);
+		}
+	}
+
+	//Use to shuffle array og songs. Implemented to shuffleSongs function
+	function shuffleArr(a) {
+		var j, x, i;
+		for (i = a.length - 1; i > 0; i--) {
+			j = Math.floor(Math.random() * (i + 1));
+			x = a[i];
+			a[i] = a[j];
+			a[j] = x;
+		}
 	}
 
 	function setTrack(trackId, newPlaylist, play) {
@@ -108,7 +164,13 @@ $jsonArr = json_encode($songArr);
 			shuffleArr(shufflePlaylist);
 		}
 
-		currentIndex = currentPlaylist.indexOf(trackId);
+		if (shuffle) {
+			currentIndex = shufflePlaylist.indexOf(trackId);
+			playPause();
+		} else {
+			currentIndex = currentPlaylist.indexOf(trackId);
+		}
+
 		playPause();
 
 		$.post(
@@ -151,61 +213,6 @@ $jsonArr = json_encode($songArr);
 
 		if (play) {
 			playSong();
-		}
-	}
-
-	function playSong() {
-		if (audioElement.audio.currentTime === 0) {
-			$.post(
-				'includes/handlers/ajax/updatePlays.php',
-				{
-					songId: audioElement.currentPlaying.id
-				}
-			);
-		}
-		$('.controlButton.play').hide();
-		$('.controlButton.pause').show();
-		audioElement.play();
-	}
-
-	function repeatSong() {
-		repeat = !repeat;
-		var repeatImageUrl = repeat ? 'assets/images/icons/repeat-active.png' : 'assets/images/icons/repeat.png';
-		$('.controlButton.repeat img').attr('src', repeatImageUrl);
-	}
-
-	function playPause() {
-		$('.controlButton.pause').hide();
-		$('.controlButton.play').show();
-		audioElement.pause();
-	}
-
-	function muteSOng() {
-		audioElement.audio.muted = !audioElement.audio.muted;
-		var muteImageUrl = audioElement.audio.muted ? 'assets/images/icons/volume-mute.png' : 'assets/images/icons/volume.png';
-		$('.controlButton.volume img').attr('src', muteImageUrl);
-	}
-
-	function shuffleSongs() {
-		shuffle = !shuffle;
-		var shuffleImageUrl = shuffle ? 'assets/images/icons/shuffle-active.png' : 'assets/images/icons/shuffle.png';
-		$('.controlButton.shuffle img').attr('src', shuffleImageUrl);
-
-		if (shuffle) {
-			shuffleArr(shufflePlaylist);
-		} else {
-			// go back to normal
-		}
-	}
-
-	//Use to shuffle array og songs. Implemented to shuffleSongs function
-	function shuffleArr(a) {
-		var j, x, i;
-		for (i = a.length - 1; i > 0; i--) {
-			j = Math.floor(Math.random() * (i + 1));
-			x = a[i];
-			a[i] = a[j];
-			a[j] = x;
 		}
 	}
 </script>
