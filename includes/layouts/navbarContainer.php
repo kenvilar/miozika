@@ -4,9 +4,9 @@
 
 <div id="navBarContainer">
     <nav class="navBar">
-        <a onclick="openPage('index.php');" class="logo">
+        <span onclick="openPage('index.php');" class="logo">
             <img src="assets/images/logo/logo-white.png" alt="Logo">
-        </a>
+        </span>
         <div class="group">
             <div class="navItem">
                 <a href="search.php" class="navItemLink">Search

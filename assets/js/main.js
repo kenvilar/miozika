@@ -13,7 +13,6 @@ function openPage(url) {
 		url = url + '?';
 	}
 	var encodedUrl = encodeURI(url + "&loggedInUser=" + loggedInUser);
-	console.log(encodedUrl);
 	$('#mainContent').load(encodedUrl);
 }
 
