@@ -1,8 +1,8 @@
 <?php
 
 include "includes/config.php";
-include "includes/classes/Constants.php";
 include "includes/classes/Account.php";
+include "includes/classes/Constants.php";
 $account = new Account($con);
 include 'includes/handlers/login-handler.php';
 
@@ -25,12 +25,13 @@ include 'includes/handlers/login-handler.php';
     <div class="registerLoginContainer">
         <div class="container">
             <div id="inputContainer">
-                <form method="POST" action="<?php $_SERVER['PHP_SELF']; ?>" id="loginForm">
+                <form method="POST" action="login.php" id="loginForm">
                     <?php echo $account->getErrors(Constants::$loginFailed); ?>
                     <p>
                         <label for="loginUsername"></label>
                         <input type="text" id="loginUsername" name="loginUsername"
-                               placeholder="Username or email address" required>
+                               placeholder="Username or email address"
+                               value="<?php $account->getInputValue('loginUsername'); ?>" required>
                     </p>
                     <p>
                         <label for="loginPassword"></label>
@@ -42,7 +43,8 @@ include 'includes/handlers/login-handler.php';
                     </p>
                 </form>
                 <br>
-                <p class="text-white text-center">Don't have an account? <a class="text-green-light" href="/register.php">Sign Up</a></p>
+                <p class="text-white text-center">Don't have an account? <a class="text-green-light"
+                                                                            href="/register.php">Sign Up</a></p>
             </div>
         </div>
     </div>

@@ -1,7 +1,7 @@
 <?php
 
 include 'includes/layouts/header.php';
-include 'includes/includedFiles.php';
+//include 'includes/includedFiles.php';
 
 ?>
 
@@ -9,7 +9,7 @@ include 'includes/includedFiles.php';
 <div class="gridViewContainer">
 
     <?php
-    $albumQuery = mysqli_query($con, "SELECT * FROM albums ORDER BY RAND() LIMIT 5");
+    $albumQuery = mysqli_query($con, "SELECT * FROM albums ORDER BY RAND() LIMIT 10");
 
     while ($row = mysqli_fetch_assoc($albumQuery)) :
         $artWorkPath = $row['artworkPath'];
