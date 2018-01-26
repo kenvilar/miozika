@@ -6,7 +6,7 @@ class Album {
     private $title;
     private $artistId;
     private $genreId;
-    private $artWorPath;
+    private $artWorkPath;
 
     public function __construct($con, $id) {
         $this->con = $con;
