@@ -81,7 +81,6 @@ $numOfSongs = $album->getNumberOfSongs();
 			var tempSongIds;
 			tempSongIds = '<?php echo json_encode($songIdArr); ?>';
 			tempPlaylist = JSON.parse(tempSongIds);
-			console.log(tempPlaylist);
         </script>
     </ul>
 </div>
