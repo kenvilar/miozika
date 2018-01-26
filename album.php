@@ -56,7 +56,7 @@ $numOfSongs = $album->getNumberOfSongs();
             <li class="trackListRow">
                 <div class="trackCount">
                     <img class="play" src="assets/images/icons/play-white.png" alt="image"
-                         onclick="setTrack(<?php echo $albumSong->getId(); ?>, tempPlaylist, true);">
+                         onclick="setTrack('<?php echo $albumSong->getId(); ?>', tempPlaylist, true);">
                     <span class='trackNumber'><?php echo $i; ?></span>
                 </div>
                 <div class="trackInfo">
