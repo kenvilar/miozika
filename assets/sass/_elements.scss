@@ -1,0 +1,11 @@
+button {
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: .015em;
+	font-weight: 200;
+	color: hsla(0,0%,100%,.6);
+	text-transform: none;
+	&:focus {
+		outline: 0;
+	}
+}
