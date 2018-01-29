@@ -1,7 +1,7 @@
 <?php
 
-include 'includes/layouts/header.php';
-//include 'includes/includedFiles.php';
+//include 'includes/layouts/header.php';
+include 'includes/includedFiles.php';
 
 ?>
 
