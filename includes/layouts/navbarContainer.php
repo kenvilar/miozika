@@ -9,9 +9,10 @@
         </span>
         <div class="group">
             <div class="navItem">
-                <a href="search.php" class="navItemLink">Search
+                <span role="link" tabindex="0" onclick="openPage(search.php);" class="navItemLink">
+                    Search
                     <img src="assets/images/icons/search.png" alt="Search" class="icon">
-                </a>
+                </span>
             </div>
         </div>
         <div class="group">
