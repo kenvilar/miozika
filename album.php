@@ -1,6 +1,7 @@
 <?php
 
-include 'includes/layouts/header.php';
+//include 'includes/layouts/header.php';
+include 'includes/includedFiles.php';
 
 if (isset($_GET['id'])) :
     $albumId = $_GET['id'];
@@ -87,4 +88,4 @@ $numOfSongs = $album->getNumberOfSongs();
 
 <?php
 
-include 'includes/layouts/footer.php'; ?>
+//include 'includes/layouts/footer.php';
