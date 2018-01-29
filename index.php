@@ -29,4 +29,5 @@ include 'includes/includedFiles.php';
 
 </div>
 
-<?php include 'includes/layouts/footer.php'; ?>
+<?php
+//include 'includes/layouts/footer.php';
