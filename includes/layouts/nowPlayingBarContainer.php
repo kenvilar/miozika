@@ -204,12 +204,12 @@ $jsonArr = json_encode($songArr);
 				);
 
 				audioElement.setTrack(track); //This is now track path based on the main.js
+
+				if (play) {
+					playSong();
+				}
 			}
 		);
-
-		if (play) {
-			audioElement.play();
-		}
 	}
 </script>
 
