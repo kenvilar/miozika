@@ -25,5 +25,8 @@
     "assets/bower_components/",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "bootstrap": "3.3.7"
+  }
 }
