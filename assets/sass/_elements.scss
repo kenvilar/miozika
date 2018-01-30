@@ -12,3 +12,12 @@ button:hover {
 	outline: 0 !important;
 	color: inherit !important;
 }
+span,
+span:focus,
+span:hover,
+span:active {
+	outline: 0;
+}
+[role="link"] {
+	cursor: pointer;
+}
