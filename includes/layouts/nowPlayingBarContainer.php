@@ -218,7 +218,7 @@ $jsonArr = json_encode($songArr);
         <div class="nowPlayingLeft">
             <div class="content">
                 <span class="albumLink">
-                    <img src="assets/images/maxresdefault.jpg" class="albumArtWork" alt="album">
+                    <img src="assets/images/logo/logo-white.png" class="albumArtWork" alt="album">
                 </span>
                 <div class="trackInfo">
                     <span class="trackName">
