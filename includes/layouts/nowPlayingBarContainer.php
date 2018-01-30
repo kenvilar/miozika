@@ -189,6 +189,7 @@ $jsonArr = json_encode($songArr);
 					function (data) {
 						var artist = JSON.parse(data); //example result {id: "2", name: "CoCo"}
 						$('.artistName span').text(artist.name);
+						$('.artistName span').attr('onclick', 'openPage("artist.php?id=' + artist.id + '")');
 					}
 				);
 
@@ -200,6 +201,8 @@ $jsonArr = json_encode($songArr);
 					function (data) {
 						var album = JSON.parse(data); //example result {id: "1", title: "Bacon and Eggs", artist: "2", genre: "4", artworkPath: "assets/images/artwork/clearday.jpg"}
 						$('.albumLink .albumArtWork').attr('src', album.artworkPath);
+						$('.albumLink .albumArtWork').attr('onclick', 'openPage("album.php?id=' + album.id + '")');
+						$('.trackName span').attr('onclick', 'openPage("album.php?id=' + album.id + '")');
 					}
 				);
 
@@ -218,14 +221,15 @@ $jsonArr = json_encode($songArr);
         <div class="nowPlayingLeft">
             <div class="content">
                 <span class="albumLink">
-                    <img src="assets/images/logo/logo-white.png" class="albumArtWork" alt="album">
+                    <img role="link" tabindex="0" src="assets/images/logo/logo-white.png" class="albumArtWork"
+                         alt="album">
                 </span>
                 <div class="trackInfo">
                     <span class="trackName">
-                        <span></span>
+                        <span role="link" tabindex="0"></span>
                     </span>
                     <span class="artistName">
-                        <span></span>
+                        <span role="link" tabindex="0"></span>
                     </span>
                 </div>
             </div>
