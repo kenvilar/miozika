@@ -25,6 +25,7 @@ $_artist = new Artist($con, $artistId);
 </div>
 
 <div class="trackListContainer border-bottom">
+    <h2 class="text-center">SONGS</h2>
     <ul class="track-list">
         <?php
         $songIdArr = $_artist->getSongIds();
@@ -75,7 +76,7 @@ $_artist = new Artist($con, $artistId);
 </div>
 
 <div class="gridViewContainer">
-
+    <h2 class="text-center">ALBUMS</h2>
     <?php
     $albumQuery = mysqli_query($con, "SELECT * FROM albums WHERE artist='$artistId'");
 
