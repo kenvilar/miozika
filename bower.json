@@ -1,0 +1,29 @@
+{
+  "name": "miozika",
+  "homepage": "https://github.com/kenvilar/miozika",
+  "description": "A music web app",
+  "main": "",
+  "keywords": [
+    "miozika",
+    "music",
+    "web",
+    "app",
+    "php",
+    "oop",
+    "mysql",
+    "javascript",
+    "sass"
+  ],
+  "authors": [
+    "Ken Vilar"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/bower_components/",
+    "test",
+    "tests"
+  ]
+}
