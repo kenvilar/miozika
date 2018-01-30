@@ -11,7 +11,7 @@ if (isset($_GET['id'])) {
 $artistId = new Artist($con, $artistId);
 ?>
 
-<div class="entityInfo artist-section">
+<div class="entityInfo artist-section border-bottom">
     <div class="centerSection">
         <div class="artistInfo">
             <h1 class="artistName"><?php echo $artistId->getName(); ?></h1>
@@ -22,7 +22,7 @@ $artistId = new Artist($con, $artistId);
     </div>
 </div>
 
-<div class="trackListContainer">
+<div class="trackListContainer border-bottom">
     <ul class="track-list">
         <?php
         $songIdArr = $artistId->getSongIds();
