@@ -28,6 +28,10 @@ $artistId = new Artist($con, $artistId);
         $songIdArr = $artistId->getSongIds();
         $i = 1;
         foreach ($songIdArr as $songId) {
+            if ($i > 5) {
+                break;
+            }
+
             $albumSong = new Song($con, $songId);
             $albumArtist = $albumSong->getArtist();
             $songtitle = $albumSong->getTitle();
