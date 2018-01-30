@@ -18,6 +18,11 @@ span:hover,
 span:active {
 	outline: 0;
 }
+input:focus,
+input:hover,
+input:active {
+	outline: 0;
+}
 [role="link"] {
 	cursor: pointer;
 }
