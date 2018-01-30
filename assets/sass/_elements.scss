@@ -3,9 +3,12 @@ button {
 	line-height: 20px;
 	letter-spacing: .015em;
 	font-weight: 200;
-	color: hsla(0,0%,100%,.6);
+	color: hsla(0, 0%, 100%, .6);
 	text-transform: none;
-	&:focus {
-		outline: 0;
-	}
+}
+button:focus,
+button:active,
+button:hover {
+	outline: 0 !important;
+	color: inherit !important;
 }
