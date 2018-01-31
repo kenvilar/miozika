@@ -1,17 +1,27 @@
-.search-container {
-	background-color: #242424;
-	padding: 20px 28px;
-	h4 {
-		margin: 0;
-		font-weight: 300;
+#search-wrapper {
+	.search-container {
+		background-color: #242424;
+		padding: 20px 28px;
+		h4 {
+			margin: 0;
+			font-weight: 300;
+		}
+		.search-input {
+			width: 100%;
+			background-color: transparent;
+			border: none;
+			color: #fff;
+			font-weight: 700;
+			font-size: 60px;
+			letter-spacing: 2px;
+		}
 	}
-	.search-input {
-		width: 100%;
-		background-color: transparent;
-		border: none;
-		color: #fff;
-		font-weight: 700;
-		font-size: 60px;
-		letter-spacing: 2px;
+	.artists-container {
+		.search-result-row {
+			padding: 15px 10px;
+			&:hover {
+				background-color: $color__bg-gray;
+			}
+		}
 	}
 }
