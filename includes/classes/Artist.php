@@ -26,4 +26,11 @@ class Artist {
 
         return $arr;
     }
+
+    public function getId() {
+        $artistQuery = mysqli_query($this->con, "SELECT * FROM artists WHERE id='$this->id'");
+        $artist = mysqli_fetch_assoc($artistQuery);
+
+        return $artist['id'];
+    }
 }
