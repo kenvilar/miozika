@@ -42,8 +42,8 @@ if (isset($_GET['term'])) {
             //Search Songs Query
             $songsQuery = mysqli_query($con, "SELECT id FROM songs WHERE title LIKE '%$term%' LIMIT 10");
 
-            if (mysqli_num_rows($songsQuery) == 0) {
-                echo '<span class="no-results">No songs found matching "' . $term . '".</span>';
+            if (mysqli_num_rows($songsQuery) === 0) {
+                echo '<div class="no-results text-center">No songs found matching "' . $term . '".</div>';
             }
 
             $songIdArr = [];
@@ -102,8 +102,8 @@ if (isset($_GET['term'])) {
         //Search Artists Query
         $artistsQuery = mysqli_query($con, "SELECT id FROM artists WHERE name LIKE '%$term%' LIMIT 10");
 
-        if (mysqli_num_rows($artistsQuery) == 0) {
-            echo '<span class="no-results">No artists found matching "' . $term . '".</span>';
+        if (mysqli_num_rows($artistsQuery) === 0) {
+            echo '<div class="no-results text-center">No artists found matching "' . $term . '".</div>';
         }
 
         $artistsIdArr = [];
@@ -133,6 +133,35 @@ if (isset($_GET['term'])) {
 
             $i++;
         }
+        ?>
+    </div>
+
+    <div class="gridViewContainer">
+        <h2 class="text-center">ALBUMS</h2>
+        <?php
+        $albumQuery = mysqli_query($con, "SELECT * FROM albums WHERE title LIKE '%$term%' LIMIT 10");
+
+        if (mysqli_num_rows($albumQuery) === 0) {
+            echo '<div class="no-results text-center">No albums found matching "' . $term . '".</div>';
+        }
+
+        while ($row = mysqli_fetch_assoc($albumQuery)) :
+            $artWorkPath = $row['artworkPath'];
+            $title = $row['title'];
+            $id = $row['id'];
+            ?>
+
+            <div class="gridViewItem">
+                <span role="link" tabindex="0" onclick="openPage('album.php?id=<?php echo $id; ?>');">
+                    <img src="<?php echo $artWorkPath; ?>" alt="image">
+                    <div class="gridViewInfo">
+                        <div class="name"><?php echo $title; ?></div>
+                    </div>
+                </span>
+            </div>
+
+            <?php
+        endwhile;
         ?>
     </div>
 </div>
