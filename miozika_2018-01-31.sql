@@ -7,7 +7,7 @@
 #
 # Host: localhost (MySQL 5.7.19)
 # Database: miozika
-# Generation Time: 2018-01-31 15:24:34 +0000
+# Generation Time: 2018-01-31 15:30:31 +0000
 # ************************************************************
 
 
@@ -119,6 +119,21 @@ CREATE TABLE `playlists` (
   `name` varchar(50) DEFAULT NULL,
   `owner` varchar(50) DEFAULT NULL,
   `dateCreated` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+# Dump of table playlistSongs
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `playlistSongs`;
+
+CREATE TABLE `playlistSongs` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `songId` int(11) DEFAULT NULL,
+  `playlistId` int(11) DEFAULT NULL,
+  `playlistOrder` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
