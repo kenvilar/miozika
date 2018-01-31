@@ -188,8 +188,9 @@ $jsonArr = json_encode($songArr);
 					},
 					function (data) {
 						var artist = JSON.parse(data); //example result {id: "2", name: "CoCo"}
-						$('.artistName span').text(artist.name);
-						$('.artistName span').attr('onclick', 'openPage("artist.php?id=' + artist.id + '")');
+						var artistName_span = $('.artistName span');
+						artistName_span.text(artist.name);
+						artistName_span.attr('onclick', 'openPage("artist.php?id=' + artist.id + '")');
 					}
 				);
 
@@ -200,8 +201,9 @@ $jsonArr = json_encode($songArr);
 					},
 					function (data) {
 						var album = JSON.parse(data); //example result {id: "1", title: "Bacon and Eggs", artist: "2", genre: "4", artworkPath: "assets/images/artwork/clearday.jpg"}
-						$('.albumLink .albumArtWork').attr('src', album.artworkPath);
-						$('.albumLink .albumArtWork').attr('onclick', 'openPage("album.php?id=' + album.id + '")');
+						var albumLink_albumArtWork = $('.albumLink .albumArtWork');
+						albumLink_albumArtWork.attr('src', album.artworkPath);
+						albumLink_albumArtWork.attr('onclick', 'openPage("album.php?id=' + album.id + '")');
 						$('.trackName span').attr('onclick', 'openPage("album.php?id=' + album.id + '")');
 					}
 				);
