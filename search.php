@@ -134,11 +134,5 @@ if (isset($_GET['term'])) {
             $i++;
         }
         ?>
-
-        <script>
-			var tempArtistIds;
-			tempArtistIds = '<?php echo json_encode($artistsIdArr); ?>';
-			tempPlaylist = JSON.parse(tempArtistIds);
-        </script>
     </div>
 </div>
