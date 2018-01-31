@@ -93,3 +93,50 @@ if (isset($_GET['term'])) {
         </script>
     </ul>
 </div>
+
+<div class="artists-container border-bottom">
+    <h2 class="text-center">ARTISTS</h2>
+    <?php
+
+    //Search Artists Query
+    $artistsQuery = mysqli_query($con, "SELECT id FROM artists WHERE name LIKE '%$term%' LIMIT 10");
+
+    if (mysqli_num_rows($artistsQuery) == 0) {
+        echo '<span class="no-results">No artists found matching "' . $term . '".</span>';
+    }
+
+    $artistsIdArr = [];
+    $i = 1;
+
+    while ($row = mysqli_fetch_assoc($artistsQuery)) {
+        if ($i > 10) {
+            break;
+        }
+
+        array_push($artistsIdArr, $row['id']);
+
+        $artistFound = new Artist($con, $row['id']);
+
+        ?>
+
+        <div class="search-result-row">
+            <div class="artist-name">
+                <span role="link" tabindex="0"
+                      onclick="openPage('artist.php?id=<?php echo $artistFound->getId(); ?>');">
+                    <?php echo $artistFound->getName(); ?>
+                </span>
+            </div>
+        </div>
+
+        <?php
+
+        $i++;
+    }
+    ?>
+
+    <script>
+		var tempSongIds;
+		tempSongIds = '<?php echo json_encode($artistsIdArr); ?>';
+		tempPlaylist = JSON.parse(tempSongIds);
+    </script>
+</div>
