@@ -39,7 +39,7 @@ if (isset($_GET['term'])) {
         <?php
 
         //Search Songs Query
-        $songsQuery = mysqli_query($con, "SELECT id FROM songs WHERE title LIKE '%$term%'");
+        $songsQuery = mysqli_query($con, "SELECT id FROM songs WHERE title LIKE '%$term%' LIMIT 10");
 
         if (mysqli_num_rows($songsQuery) == 0) {
             echo '<span class="no-results">No songs found matching "' . $term . '".</span>';
@@ -48,6 +48,10 @@ if (isset($_GET['term'])) {
         $songIdArr = [];
         $i = 1;
         while ($row = mysqli_fetch_assoc($songsQuery)) {
+            if ($i > 10) {
+                break;
+            }
+
             array_push($songIdArr, $row['id']);
 
             $albumSong = new Song($con, $row['id']);
