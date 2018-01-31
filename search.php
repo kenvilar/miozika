@@ -34,6 +34,12 @@ if (isset($_GET['term'])) {
                onfocus="var val=this.value; this.value=''; this.value= val;">
     </div>
 
+    <?php
+    if (empty($term) || $term === null) {
+        exit();
+    }
+    ?>
+
     <div class="trackListContainer border-bottom">
         <h2 class="text-center">SONGS</h2>
         <ul class="track-list">
