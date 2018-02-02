@@ -43,6 +43,26 @@ function createPlaylist() {
 	}
 }
 
+function deletePlaylist(playlistId) {
+	var deletePlaylistPrompt = confirm('Are you sure you want to delete the playlist?');
+
+	if (deletePlaylistPrompt === true) {
+		$.post(
+			'includes/handlers/ajax/deletePlaylist.php',
+			{
+				playlistId: playlistId
+			}
+		).done(function (error) {
+			if (error !== "") {
+				alert(error);
+				return;
+			}
+
+			openPage('yourMusic.php');
+		});
+	}
+}
+
 function formatTime(timeInSeconds) {
 	var seconds = Math.round(timeInSeconds);
 	var minutes = Math.floor(seconds / 60);
