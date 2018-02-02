@@ -10,7 +10,7 @@ include 'includes/includedFiles.php';
         <div class="grid-view-container">
             <h2 class="text-center">PLAYLISTS</h2>
             <div class="button-items">
-                <button class="btn btn-green center-block">NEW PLAYLIST</button>
+                <button class="btn btn-green center-block" onclick="createPlaylist()">NEW PLAYLIST</button>
             </div>
         </div>
     </div>

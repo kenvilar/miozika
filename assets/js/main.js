@@ -23,6 +23,20 @@ function openPage(url) {
 	history.pushState(null, null, url);
 }
 
+function createPlaylist() {
+	console.log(loggedInUser);
+	var alertPlaylist = prompt('Please enter the name of your playlist');
+
+	if (alertPlaylist !== null) {
+		$.post(
+			'includes/handlers/ajax/createPlaylist.php',
+			{ playlistName: alertPlaylist, userName: loggedInUser }
+		).done(function () {
+			openPage('yourMusic.php');
+		});
+	}
+}
+
 function formatTime(timeInSeconds) {
 	var seconds = Math.round(timeInSeconds);
 	var minutes = Math.floor(seconds / 60);
