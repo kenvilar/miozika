@@ -7,8 +7,8 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH'])) {
     include 'includes/classes/Album.php';
     include 'includes/classes/Song.php';
 
-    if (isset($_GET['userLoggedIn'])) {
-        $userLoggedIn = new User($con, $_GET['userLoggedIn']);
+    if (isset($_GET['loggedInUser'])) {
+        $userLoggedIn = new User($con, $_GET['loggedInUser']);
     } else {
         echo 'Username var defined. Check the openPage() function in main.js';
     }
