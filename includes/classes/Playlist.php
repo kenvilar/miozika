@@ -26,7 +26,7 @@ class Playlist {
     }
 
     public function getNumberOfSongs() {
-        $query = mysqli_query($con, "SELECT songId FROM playlistSongs WHERE playlistId='$this->id'");
+        $query = mysqli_query($this->con, "SELECT songId FROM playlistSongs WHERE playlistId='$this->id'");
         return mysqli_num_rows($query);
     }
 }
