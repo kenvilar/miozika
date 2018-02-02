@@ -23,9 +23,7 @@ include 'includes/includedFiles.php';
             }
 
             while ($row = mysqli_fetch_assoc($playlistQuery)) :
-                $name = $row['name'];
-                $owner = $row['owner'];
-                $dateCreated = $row['dateCreated'];
+                $playlist = new Playlist($con, $row);
                 ?>
 
                 <div class="gridViewItem">
@@ -33,7 +31,7 @@ include 'includes/includedFiles.php';
                         <img src="assets/images/icons/playlist.png" alt="image">
                     </div>
                     <div class="gridViewInfo">
-                        <div class="name"><?php echo $name; ?></div>
+                        <div class="name"><?php echo $playlist->getName(); ?></div>
                     </div>
                 </div>
 
