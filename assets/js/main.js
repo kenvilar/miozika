@@ -6,7 +6,7 @@ var mouseDown = false;
 var currentIndex = 0;
 var repeat = false;
 var shuffle = false;
-var loggedInUser;
+var userLoggedIn;
 var timer;
 
 function openPage(url) {
@@ -17,20 +17,21 @@ function openPage(url) {
 	if (url.indexOf('?') === -1) {
 		url = url + '?';
 	}
-	var encodedUrl = encodeURI(url + "&loggedInUser=" + loggedInUser);
+	var encodedUrl = encodeURI(url + "&loggedInUser=" + userLoggedIn);
+	console.log(encodedUrl);
 	$('#mainContent').load(encodedUrl);
 	$('body').scrollTop(0);
 	history.pushState(null, null, url);
 }
 
 function createPlaylist() {
-	console.log(loggedInUser);
+	console.log(userLoggedIn);
 	var alertPlaylist = prompt('Please enter the name of your playlist');
 
 	if (alertPlaylist !== null) {
 		$.post(
 			'includes/handlers/ajax/createPlaylist.php',
-			{ playlistName: alertPlaylist, userName: loggedInUser }
+			{playlistName: alertPlaylist, userName: userLoggedIn}
 		).done(function () {
 			openPage('yourMusic.php');
 		});
