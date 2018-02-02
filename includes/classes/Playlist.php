@@ -24,4 +24,9 @@ class Playlist {
     public function getOwner() {
         return $this->owner;
     }
+
+    public function getNumberOfSongs() {
+        $query = mysqli_query($con, "SELECT songId FROM playlistSongs WHERE playlistId='$this->id'");
+        return mysqli_num_rows($query);
+    }
 }
