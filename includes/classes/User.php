@@ -8,4 +8,8 @@ class User {
         $this->con = $con;
         $this->userName = $userName;
     }
+
+    public function getName() {
+        return $this->userName;
+    }
 }
