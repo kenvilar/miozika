@@ -32,7 +32,12 @@ function createPlaylist() {
 		$.post(
 			'includes/handlers/ajax/createPlaylist.php',
 			{playlistName: alertPlaylist, userName: userLoggedIn}
-		).done(function () {
+		).done(function (error) {
+			if (error !== "") {
+				alert(error);
+				return;
+			}
+
 			openPage('yourMusic.php');
 		});
 	}
