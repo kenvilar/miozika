@@ -34,4 +34,15 @@ class Playlist {
         $query = mysqli_query($this->con, "SELECT songId FROM playlistSongs WHERE playlistId='$this->id'");
         return mysqli_num_rows($query);
     }
+
+    public function getSongIds() {
+        $query = mysqli_query($this->con, "SELECT songId FROM playlistSongs WHERE playlistId='$this->id' ORDER BY playlistOrder ASC");
+        $arr = [];
+
+        while ($row = mysqli_fetch_assoc($query)) {
+            array_push($arr, $row['songId']);
+        }
+
+        return $arr;
+    }
 }

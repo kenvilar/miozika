@@ -15,34 +15,36 @@ $owner = new User($con, $playlist->getOwner());
 
     <div class="entityInfo">
         <div class="leftSection">
-            <img src="assets/images/icons/playlist.png" alt="image">
+            <div>
+                <img src="assets/images/icons/playlist.png" alt="image">
+            </div>
         </div>
         <div class="rightSection">
             <h2><?php echo $playlist->getName(); ?></h2>
             <p>By <?php echo $playlist->getOwner(); ?></p>
             <p><?php echo $playlist->getNumberOfSongs(); ?> songs</p>
-            <button class="btn">DELETE PLAYLIST</button>
+            <button class="btn btn-danger">DELETE PLAYLIST</button>
         </div>
     </div>
 
     <div class="trackListContainer">
         <ul class="track-list">
             <?php
-            $songIdArr = [];
+            $songIdArr = $playlist->getSongIds();
             $i = 1;
             foreach ($songIdArr as $songId) {
-                $albumSong = new Song($con, $songId);
-                $albumArtist = $albumSong->getArtist();
-                $songtitle = $albumSong->getTitle();
-                $songArtist = $albumSong->getArtist()->getName();
-                $songDuration = $albumSong->getDuration();
+                $playlistSong = new Song($con, $songId);
+                $albumArtist = $playlistSong->getArtist();
+                $songtitle = $playlistSong->getTitle();
+                $songArtist = $playlistSong->getArtist()->getName();
+                $songDuration = $playlistSong->getDuration();
 
                 ?>
 
                 <li class="trackListRow">
                     <div class="trackCount">
                         <img class="play" src="assets/images/icons/play-white.png" alt="image"
-                             onclick="setTrack('<?php echo $albumSong->getId(); ?>', tempPlaylist, true);">
+                             onclick="setTrack('<?php echo $playlistSong->getId(); ?>', tempPlaylist, true);">
                         <span class='trackNumber'><?php echo $i; ?></span>
                     </div>
                     <div class="trackInfo">
