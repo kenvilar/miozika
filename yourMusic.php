@@ -29,6 +29,9 @@ include 'includes/includedFiles.php';
                 ?>
 
                 <div class="gridViewItem">
+                    <div class="playlist-image">
+                        <img src="assets/images/icons/playlist.png" alt="image">
+                    </div>
                     <div class="gridViewInfo">
                         <div class="name"><?php echo $name; ?></div>
                     </div>
