@@ -1,0 +1,7 @@
+.optionsMenu {
+	position: fixed;
+	background-color: $color__bg-gray;
+	width: 200px;
+	border: 1px solid $color__black;
+	@include border-radius(3px);
+}
