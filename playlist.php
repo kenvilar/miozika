@@ -23,7 +23,9 @@ $owner = new User($con, $playlist->getOwner());
             <h2><?php echo $playlist->getName(); ?></h2>
             <p>By <?php echo $playlist->getOwner(); ?></p>
             <p><?php echo $playlist->getNumberOfSongs(); ?> songs</p>
-            <button class="btn btn-danger">DELETE PLAYLIST</button>
+            <button class="btn btn-danger" onclick="deletePlaylist(<?php echo $playlist->getId(); ?>);">
+                DELETE PLAYLIST
+            </button>
         </div>
     </div>
 
