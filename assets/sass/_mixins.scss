@@ -2,5 +2,9 @@
 	-webkit-border-radius: $radius;
 	-moz-border-radius: $radius;
 	border-radius: $radius;
-	z-index: 1000;
+}
+@mixin box-sizing($var) {
+	-webkit-box-sizing: $var;
+	-moz-box-sizing: $var;
+	box-sizing: $var;
 }

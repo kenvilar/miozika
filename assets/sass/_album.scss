@@ -4,4 +4,19 @@
 	width: 200px;
 	border: 1px solid $color__black;
 	@include border-radius(3px);
+	z-index: 1000;
+	.item {
+		width: 100%;
+		padding: 12px 20px;
+		@include box-sizing(border-box);
+		font-weight: 400;
+		color: rgba(147, 147, 147, 0.8);
+		cursor: pointer;
+		height: 40px;
+		&:hover {
+			color: $color__white;
+			background-color: #333;
+			border-color: #333;
+		}
+	}
 }
