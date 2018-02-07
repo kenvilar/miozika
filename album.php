@@ -65,7 +65,8 @@ $numOfSongs = $album->getNumberOfSongs();
                         <span class='artistName'><?php echo $songArtist; ?></span>
                     </div>
                     <div class="trackOptions">
-                        <img class="optionsButton" src="assets/images/icons/more.png" alt="image">
+                        <img class="optionsButton" src="assets/images/icons/more.png" alt="image"
+                             onclick="showOptionsMenu(this);">
                     </div>
                     <div class="trackDuration">
                         <span class="duration"><?php echo $songDuration; ?></span>
