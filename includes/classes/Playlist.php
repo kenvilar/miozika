@@ -45,4 +45,12 @@ class Playlist {
 
         return $arr;
     }
+
+    public static function getPlaylistDropdown($con, $username) {
+        $dropdown = '<select name="" class="item" id="">';
+        $dropdown .= '<option value="">Add to playlist</option>';
+        $dropdown .= '</select>';
+
+        return $dropdown;
+    }
 }
