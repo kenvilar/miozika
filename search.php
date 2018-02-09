@@ -78,7 +78,8 @@ if (isset($_GET['term'])) {
                         <span class='artistName'><?php echo $songArtist; ?></span>
                     </div>
                     <div class="trackOptions">
-                        <img class="optionsButton" src="assets/images/icons/more.png" alt="image">
+                        <input type="hidden" class="songId" value="<?php echo $albumSong->getId(); ?>">
+                        <img class="optionsButton" src="assets/images/icons/more.png" alt="image" onclick="showOptionsMenu(this);">
                     </div>
                     <div class="trackDuration">
                         <span class="duration"><?php echo $songDuration; ?></span>
@@ -169,3 +170,7 @@ if (isset($_GET['term'])) {
         ?>
     </div>
 </div>
+
+<?php
+
+include 'includes/layouts/dropdown-menu.php';

@@ -88,16 +88,6 @@ $numOfSongs = $album->getNumberOfSongs();
         </ul>
     </div>
 
-    <nav class="optionsMenu">
-        <input type="hidden" class="songId">
-        <label for="playlist-item"></label>
-        <?php
-        echo Playlist::getPlaylistDropdown($con, $userLoggedIn->getName());
-        ?>
-        <div class="item">Item 2</div>
-        <div class="item">Item 3</div>
-    </nav>
-
 <?php
 
-//include 'includes/layouts/footer.php';
+include 'includes/layouts/dropdown-menu.php';

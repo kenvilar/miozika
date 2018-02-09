@@ -1,7 +1,7 @@
-</div> <!--#mainContent-->
-</div> <!--#mainViewContainer-->
+            </div> <!--#mainContent-->
+        </div> <!--#mainViewContainer-->
 
-</div> <!--#topContainer-->
+    </div> <!--#topContainer-->
 
 <?php
 include 'includes/layouts/nowPlayingBarContainer.php';

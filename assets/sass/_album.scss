@@ -7,7 +7,7 @@
 	z-index: 1000;
 	.item {
 		width: 100%;
-		padding: 12px 20px 6px;
+		padding: 0 20px;
 		@include box-sizing(border-box);
 		font-size: 14px;
 		font-weight: 400;
@@ -21,7 +21,6 @@
 		appearance: none;
 		&:hover {
 			color: $color__white;
-			background-color: #333;
 			border-color: #333;
 		}
 	}
