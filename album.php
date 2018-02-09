@@ -91,7 +91,7 @@ $numOfSongs = $album->getNumberOfSongs();
         <input type="hidden" class="songId">
         <label for=""></label>
         <?php
-        echo Playlist::getPlaylistDropdown($con, $userLoggedIn);
+        echo Playlist::getPlaylistDropdown($con, $userLoggedIn->getName());
         ?>
         <div class="item">Item 2</div>
         <div class="item">Item 3</div>
