@@ -65,6 +65,7 @@ $numOfSongs = $album->getNumberOfSongs();
                         <span class='artistName'><?php echo $songArtist; ?></span>
                     </div>
                     <div class="trackOptions">
+                        <input type="hidden" class="songId" value="<?php echo $albumSong->getId(); ?>">
                         <img class="optionsButton" src="assets/images/icons/more.png" alt="image"
                              onclick="showOptionsMenu(this);">
                     </div>
@@ -89,7 +90,7 @@ $numOfSongs = $album->getNumberOfSongs();
 
     <nav class="optionsMenu">
         <input type="hidden" class="songId">
-        <label for=""></label>
+        <label for="playlist-item"></label>
         <?php
         echo Playlist::getPlaylistDropdown($con, $userLoggedIn->getName());
         ?>

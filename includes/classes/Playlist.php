@@ -47,7 +47,7 @@ class Playlist {
     }
 
     public static function getPlaylistDropdown($con, $username) {
-        $dropdown = '<select name="" class="item" id="">';
+        $dropdown = '<select name="" class="item dom-playlist" id="playlist-item">';
         $dropdown .= '<option value="">Add to playlist</option>';
         $query = mysqli_query($con, "SELECT * FROM playlists WHERE owner ='$username'");
         if (mysqli_num_rows($query) > 0) {
