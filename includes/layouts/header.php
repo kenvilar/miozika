@@ -9,8 +9,8 @@ include 'includes/classes/Playlist.php';
 
 if (isset($_SESSION['userLoggedIn'])) {
     $userLoggedIn = new User($con, $_SESSION['userLoggedIn']);
-    $user_firstname_and_lastname = $userLoggedIn->getFirstAndLastName();
-    echo "<script>userLoggedIn = '$user_firstname_and_lastname';</script>";
+    $user = $userLoggedIn->getName();
+    echo "<script>userLoggedIn = '{$user}';</script>";
 } else {
     header('Location: register.php');
 }
