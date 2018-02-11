@@ -60,7 +60,7 @@ function openPage(url) {
 }
 
 function removeSongFromPlaylist(el, playlistId) {
-	var songId = $(el).prevAll('.songid').val();
+	var songId = $(el).prevAll('.songId').val();
 
 	$.post(
 		'includes/handlers/ajax/removeSongFromPlaylist.php',

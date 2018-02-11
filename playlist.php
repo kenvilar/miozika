@@ -79,4 +79,4 @@ $owner = new User($con, $playlist->getOwner());
 
 <?php
 
-include 'includes/layouts/dropdown-menu.php';
+include 'includes/layouts/dropdown-menu-remove-from-playlist.php';
