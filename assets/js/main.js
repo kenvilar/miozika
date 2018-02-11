@@ -53,6 +53,24 @@ function updateEmail(emailClass) {
 		});
 }
 
+function updatePassword(oldPasswordClassname, newPasswordClassname, confirmPasswordClassname) {
+	var oldPassword = $('.' + oldPasswordClassname).val();
+	var newPassword = $('.' + newPasswordClassname).val();
+	var confirmPassword = $('.' + confirmPasswordClassname).val();
+
+	$.post(
+		'includes/handlers/ajax/updatePassword.php',
+		{
+			oldPassword: oldPassword,
+			newPassword: newPassword,
+			confirmPassword: confirmPassword,
+			userLoggedIn: userLoggedIn
+		}
+	).done(function (response) {
+		$('.' + oldPasswordClassname).nextAll('.message').text(response);
+	});
+}
+
 function logout() {
 	$.post('includes/handlers/ajax/logout.php', function () {
 		location.reload();
