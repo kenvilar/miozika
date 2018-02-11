@@ -10,4 +10,7 @@
     <?php
     echo Playlist::getPlaylistDropdown($con, $userLoggedIn->getName());
     ?>
+    <div class="item" onclick="removeSongFromPlaylist(this, <?php echo $playlistId; ?>);">
+        Remove from Playlist
+    </div>
 </nav>

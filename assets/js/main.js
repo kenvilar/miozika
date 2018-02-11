@@ -59,6 +59,25 @@ function openPage(url) {
 	history.pushState(null, null, url);
 }
 
+function removeSongFromPlaylist(el, playlistId) {
+	var songId = $(el).prevAll('.songid').val();
+
+	$.post(
+		'includes/handlers/ajax/removeSongFromPlaylist.php',
+		{
+			playlistId: playlistId,
+			songId: songId
+		}
+	).done(function (error) {
+		if (error !== "") {
+			alert(error);
+			return;
+		}
+
+		openPage('playlist.php?id=' + playlistId);
+	});
+}
+
 function createPlaylist() {
 	console.log(userLoggedIn);
 	var alertPlaylist = prompt('Please enter the name of your playlist');
@@ -98,16 +117,16 @@ function deletePlaylist(playlistId) {
 	}
 }
 
-function showOptionsMenu(button) {
-	var songId = $(button).prevAll('.songId').val();
+function showOptionsMenu(el) {
+	var songId = $(el).prevAll('.songId').val();
 	var menu = $('.optionsMenu');
 	var menuWidth = menu.width();
 	menu.find('.songId').val(songId);
 	var scrollTop = $(window).scrollTop();
-	var elementOffset = $(button).offset().top;
+	var elementOffset = $(el).offset().top;
 
 	var top = elementOffset - scrollTop;
-	var left = $(button).position().left;
+	var left = $(el).position().left;
 
 	menu.css({
 		'top': top + 'px',
