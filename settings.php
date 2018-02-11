@@ -14,7 +14,7 @@ include 'includes/includedFiles.php';
         </div>
     </div>
     <div class="buttonItems">
-        <button class="btn btn-green center-block">USER DETAILS</button>
+        <button class="btn btn-green center-block" onclick="openPage('updateDetails.php');">USER DETAILS</button>
         <button class="btn btn-green center-block" onclick="logout();">LOGOUT</button>
     </div>
 </div>

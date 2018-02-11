@@ -1,0 +1,22 @@
+.user-details {
+	padding: 20px;
+	.container {
+		.message {
+			color: #2ebd59;
+			font-weight: 300;
+		}
+		input {
+			height: 50px;
+			width: 100%;
+			background-color: $color__bg-gray;
+			border: none;
+			font-size: 18px;
+			font-weight: 300;
+			padding: 0 30px;
+		}
+		input[type="email"], input[type="password"], button {
+			display: block;
+			margin: 16px auto;
+		}
+	}
+}
