@@ -44,6 +44,15 @@ $(document).on('change', 'select.dom-playlist', function () {
 	});
 });
 
+function updateEmail(emailClass) {
+	var emailVal = $('.' + emailClass).val();
+
+	$.post('includes/handlers/ajax/updateEmail.php', {email: emailVal, username: userLoggedIn})
+		.done(function (response) {
+			$('.' + emailClass).nextAll('.message').text(response);
+		});
+}
+
 function logout() {
 	$.post('includes/handlers/ajax/logout.php', function () {
 		location.reload();
