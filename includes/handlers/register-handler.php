@@ -18,12 +18,18 @@ function sanitizeFormString($inputText) {
     return $inputText;
 }
 
+function sanitizeEmailString($inputText) {
+    $inputText = strip_tags($inputText);
+    $inputText = str_replace(" ", "", $inputText);
+    return $inputText;
+}
+
 if (isset($_POST['registerButton'])) {
     $userName = sanitizeFormUsername($_POST['userName']);
     $firstName = sanitizeFormString($_POST['firstName']);
     $lastName = sanitizeFormString($_POST['lastName']);
-    $email = sanitizeFormString($_POST['email']);
-    $confirmEmail = sanitizeFormString($_POST['confirmEmail']);
+    $email = sanitizeEmailString($_POST['email']);
+    $confirmEmail = sanitizeEmailString($_POST['confirmEmail']);
     $password = sanitizeFormPassword($_POST['password']);
     $confirmPassword = sanitizeFormPassword($_POST['confirmPassword']);
 
