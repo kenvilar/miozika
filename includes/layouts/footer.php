@@ -1,13 +1,15 @@
-</div> <!--#mainContent-->
-</div> <!--#mainViewContainer-->
+                </div> <!--#mainContent-->
+            </div> <!--#mainViewContainer-->
 
-</div> <!--#topContainer-->
+        </div> <!--#topContainer-->
 
-<?php
-include 'includes/layouts/nowPlayingBarContainer.php';
-?>
+    <?php
+    include 'includes/layouts/nowPlayingBarContainer.php';
+    ?>
 
-</div> <!--#mainContainer"-->
+    </div> <!--#mainContainer"-->
+
+<script src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 </body>
 </html>
