@@ -1,0 +1,18 @@
+.register-logo {
+	position: absolute;
+	text-align: center;
+	margin: 0 auto;
+	display: block;
+	top: 50%;
+	left: 50%;
+	padding: 0;
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, 50%);
+}
+@media only screen and (max-width: 992px) {
+	.register-logo {
+		position: initial;
+		transform: none;
+	}
+}
