@@ -1,6 +1,5 @@
 .sass-cache
 *.css.map
-assets/bower_components
 
 # User-specific stuff:
 .idea/
