@@ -19,11 +19,16 @@ include 'includes/handlers/login-handler.php';
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body style="min-width: 100%;">
 
 <div id="background">
     <div class="registerLoginContainer">
         <div class="container">
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <img src="assets/images/logo/logo-white.png" alt="logo">
+                </div>
+            </div>
             <div id="inputContainer">
                 <form method="POST" action="login.php" id="loginForm">
                     <?php echo $account->getErrors(Constants::$loginFailed); ?>
