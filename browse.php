@@ -25,7 +25,7 @@ include 'includes/includedFiles.php';
                 </span>
             </div>
 
-            <?php
+        <?php
         endwhile;
         ?>
 

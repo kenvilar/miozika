@@ -77,7 +77,8 @@ include 'includes/handlers/register-handler.php';
                     </p>
                 </form>
                 <br>
-                <p class="text-white text-center">Already have an account? <a class="text-green-light" href="/login.php">Log in</a></p>
+                <p class="text-white text-center">Already have an account? <a class="text-green-light"
+                                                                              href="/login.php">Log in</a></p>
             </div>
         </div>
     </div>
